@@ -12,13 +12,13 @@ export default function About() {
       <SiteHeader />
       <main id="main" className="page-shell pb-24 pt-10">
         <header className="grid gap-8 border-b rule pb-14 md:grid-cols-[.55fr_1.45fr]">
-          <p className="meta text-[10px] uppercase text-[var(--accent)]">About jaunrcy</p>
+          <p className="meta text-[10px] uppercase text-[var(--accent)]">About me</p>
           <div>
             <h1 className="display text-6xl sm:text-8xl lg:text-[9rem]">
-              A notebook for the edges of the image.
+              A journal of the self, its thoughts, and its quiet feelings.
             </h1>
             <p className="mt-8 max-w-2xl text-lg leading-8 text-[var(--muted)]">
-              jaunrcy is my independent personal journal about images, ideas, and creative work.
+              Jauncry is my personal moniker, a record of how I think.
             </p>
           </div>
         </header>
