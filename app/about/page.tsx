@@ -38,11 +38,14 @@ export default function About() {
               aria-label="Author profile and contact"
               className="mb-12 grid grid-cols-[4.5rem_1fr] gap-5 border-b rule pb-8 sm:grid-cols-[5.5rem_1fr] sm:gap-7"
             >
-              <div
-                aria-hidden="true"
-                className="display flex aspect-square items-center justify-center rounded-full border rule bg-[var(--surface)] text-5xl text-[var(--accent)] sm:text-6xl"
-              >
-                J
+              <div className="relative aspect-square overflow-hidden rounded-full border rule bg-[var(--surface)]">
+                <Image
+                  src="/images/jaunrcy-avatar.jpg"
+                  alt="Portrait of jaunrcy"
+                  fill
+                  sizes="(max-width: 640px) 4.5rem, 5.5rem"
+                  className="object-cover"
+                />
               </div>
               <div className="self-center">
                 <p className="meta text-[10px] uppercase text-[var(--accent)]">Author</p>
