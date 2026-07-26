@@ -48,7 +48,7 @@ export default function About() {
                 <p className="meta text-[10px] uppercase text-[var(--accent)]">Author</p>
                 <h2 className="mt-2 text-xl font-medium sm:text-2xl">jaunrcy</h2>
                 <p className="mt-2 max-w-xl text-sm leading-6 text-[var(--muted)]">
-                  Writing from the space between images, memory, and unfinished thought.
+                  Turning My Life into a Magazine
                 </p>
                 <a
                   className="focus-ring mt-4 inline-flex border-b rule pb-1 text-sm transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)]"
@@ -62,15 +62,17 @@ export default function About() {
             </aside>
             <div className="prose">
               <p>
-                I work between moving images, writing, and visual research. This journal began as a
-                way to keep the uncertain parts of that practice visible: the references that do not
-                fit a project, the mistakes that change its direction, and the questions that remain
-                after the work is shown.
+                Ever since I started university, time has felt like the cheapest thing in the world. I barely noticed it passing, 
+                and I made no meaningful effort to change the way I was living. But things are different now.
+                So, in the words of Miles Morales:
+                “Okay, let’s do this one last time, yeah? For real this time. This is it.”
               </p>
               <p>
-                Most entries begin in transit or in the edit room. They are less interested in
-                conclusions than in the quality of attention we bring to images—and the choices
-                hidden inside apparently effortless work.
+               I’m a university student from Northeast China, now living and studying far from home in Hangzhou. 
+               My goal is to become an independent developer and security researcher.
+               Through words, photographs, and videos, 
+               I want to document what it feels like to be the protagonist of my own life—the things I notice, experience, 
+               question, and learn along the way—as I work toward the life I truly want to live.
               </p>
               <blockquote>
                 jaunrcy is where the unfinished thought is allowed to keep its edges.
