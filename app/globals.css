@@ -4,15 +4,16 @@
 
 :root {
   color-scheme: dark;
-  --bg: #050507;
-  --surface: #0d0e14;
-  --surface-2: #151724;
-  --ink: #f7f7fb;
-  --muted: #9b9dae;
-  --accent: #6576ff;
-  --accent-2: #6353db;
-  --on-accent: #ffffff;
-  --rule: rgba(126, 139, 255, 0.22);
+  --bg: #08090a;
+  --surface: #111214;
+  --surface-2: #1b1c1f;
+  --ink: #f4f4f2;
+  --muted: #aaacb1;
+  --accent: #d7d8dc;
+  --accent-2: #bfc1c6;
+  --on-accent: #111214;
+  --rule: rgba(220, 222, 227, 0.24);
+  --background-tint: rgba(5, 6, 8, 0.64);
   --dur-1: 160ms;
   --dur-2: 320ms;
   --dur-3: 720ms;
@@ -22,15 +23,16 @@
 
 html[data-theme="light"] {
   color-scheme: light;
-  --bg: #f4f5fa;
-  --surface: #e9ebf3;
-  --surface-2: #dfe2ee;
-  --ink: #0d0e14;
-  --muted: #626678;
-  --accent: #4f5fe7;
-  --accent-2: #6353db;
+  --bg: #f1f2f3;
+  --surface: #e5e6e8;
+  --surface-2: #dadddf;
+  --ink: #151617;
+  --muted: #666a70;
+  --accent: #777c84;
+  --accent-2: #969aa1;
   --on-accent: #ffffff;
-  --rule: rgba(53, 62, 112, 0.22);
+  --rule: rgba(74, 78, 84, 0.24);
+  --background-tint: rgba(241, 242, 243, 0.8);
 }
 
 html[data-theme="dark"] {
@@ -40,15 +42,16 @@ html[data-theme="dark"] {
 @media (prefers-color-scheme: light) {
   :root:not([data-theme]) {
     color-scheme: light;
-    --bg: #f4f5fa;
-    --surface: #e9ebf3;
-    --surface-2: #dfe2ee;
-    --ink: #0d0e14;
-    --muted: #626678;
-    --accent: #4f5fe7;
-    --accent-2: #6353db;
+    --bg: #f1f2f3;
+    --surface: #e5e6e8;
+    --surface-2: #dadddf;
+    --ink: #151617;
+    --muted: #666a70;
+    --accent: #777c84;
+    --accent-2: #969aa1;
     --on-accent: #ffffff;
-    --rule: rgba(53, 62, 112, 0.22);
+    --rule: rgba(74, 78, 84, 0.24);
+    --background-tint: rgba(241, 242, 243, 0.8);
   }
 }
 * {
@@ -60,7 +63,9 @@ html {
 }
 body {
   margin: 0;
-  background: var(--bg);
+  min-height: 100vh;
+  isolation: isolate;
+  background: transparent;
   color: var(--ink);
   font-family: var(--font-manrope), sans-serif;
   overflow-x: hidden;
@@ -107,6 +112,20 @@ a {
 }
 .paper-grain {
   position: relative;
+}
+.paper-grain:after {
+  content: "";
+  position: fixed;
+  inset: -2.5rem;
+  z-index: -1;
+  pointer-events: none;
+  background-image:
+    linear-gradient(var(--background-tint), var(--background-tint)),
+    url("/images/ocean-background.jpg");
+  background-position: center;
+  background-size: cover;
+  filter: blur(18px);
+  transform: scale(1.035);
 }
 .paper-grain:before {
   content: "";
@@ -216,7 +235,7 @@ html[data-theme="light"] .paper-grain:before {
 .story-link:hover .story-title {
   transform: translateX(0.25rem);
   color: var(--accent);
-  text-shadow: 0 0 2rem rgba(101, 118, 255, 0.2);
+  text-shadow: 0 0 2rem color-mix(in srgb, var(--accent) 22%, transparent);
 }
 .story-link img {
   filter: saturate(0.68) contrast(1.09) brightness(0.82);
@@ -240,7 +259,7 @@ html[data-theme="light"] .story-link:hover img {
   background: linear-gradient(
     to top,
     rgba(5, 5, 7, 0.86),
-    rgba(40, 45, 104, 0.14) 48%,
+    rgba(210, 212, 217, 0.08) 48%,
     rgba(5, 5, 7, 0.04)
   );
 }

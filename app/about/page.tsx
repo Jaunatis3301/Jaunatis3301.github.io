@@ -65,17 +65,17 @@ export default function About() {
             </aside>
             <div className="prose">
               <p>
-                Ever since I started university, time has felt like the cheapest thing in the world. I barely noticed it passing, 
-                and I made no meaningful effort to change the way I was living. But things are different now.
-                So, in the words of Miles Morales:
-                “Okay, let’s do this one last time, yeah? For real this time. This is it.”
+                Ever since I started university, time has felt like the cheapest thing in the world.
+                I barely noticed it passing, and I made no meaningful effort to change the way I was
+                living. But things are different now. So, in the words of Miles Morales: “Okay,
+                let’s do this one last time, yeah? For real this time. This is it.”
               </p>
               <p>
-               I’m a university student from Northeast China, now living and studying far from home in Hangzhou. 
-               My goal is to become an independent developer and security researcher.
-               Through words, photographs, and videos, 
-               I want to document what it feels like to be the protagonist of my own life—the things I notice, experience, 
-               question, and learn along the way—as I work toward the life I truly want to live.
+                I’m a university student from Northeast China, now living and studying far from home
+                in Hangzhou. My goal is to become an independent developer and security researcher.
+                Through words, photographs, and videos, I want to document what it feels like to be
+                the protagonist of my own life—the things I notice, experience, question, and learn
+                along the way—as I work toward the life I truly want to live.
               </p>
               <blockquote>
                 jaunrcy is where the unfinished thought is allowed to keep its edges.
