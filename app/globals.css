@@ -13,7 +13,7 @@
   --accent-2: #bfc1c6;
   --on-accent: #111214;
   --rule: rgba(220, 222, 227, 0.24);
-  --background-tint: rgba(5, 6, 8, 0.48);
+  --background-tint: rgba(5, 6, 8, 0.18);
   --dur-1: 160ms;
   --dur-2: 320ms;
   --dur-3: 720ms;
@@ -32,7 +32,7 @@ html[data-theme="light"] {
   --accent-2: #969aa1;
   --on-accent: #ffffff;
   --rule: rgba(74, 78, 84, 0.24);
-  --background-tint: rgba(241, 242, 243, 0.68);
+  --background-tint: rgba(241, 242, 243, 0.5);
 }
 
 html[data-theme="dark"] {
@@ -51,7 +51,7 @@ html[data-theme="dark"] {
     --accent-2: #969aa1;
     --on-accent: #ffffff;
     --rule: rgba(74, 78, 84, 0.24);
-    --background-tint: rgba(241, 242, 243, 0.68);
+    --background-tint: rgba(241, 242, 243, 0.5);
   }
 }
 * {
@@ -122,10 +122,15 @@ a {
   background-image:
     linear-gradient(var(--background-tint), var(--background-tint)),
     url("/images/ocean-background.jpg");
-  background-position: center;
+  background-position: 58% center;
   background-size: cover;
-  filter: blur(18px);
+  filter: blur(12px) brightness(1.2) contrast(1.06);
   transform: scale(1.035);
+}
+@media (max-width: 640px) {
+  .paper-grain:after {
+    background-position: 70% center;
+  }
 }
 .paper-grain:before {
   content: "";
