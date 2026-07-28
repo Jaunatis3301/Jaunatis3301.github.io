@@ -1,4 +1,5 @@
 import Link from "next/link";
+import DecorativeMotif from "@/components/DecorativeMotif";
 import FeaturedEssay from "@/components/FeaturedEssay";
 import Masthead from "@/components/Masthead";
 import SiteFooter from "@/components/SiteFooter";
@@ -13,8 +14,15 @@ export default function Home() {
         <FeaturedEssay />
         <StoryList />
         <section className="page-shell grid gap-8 py-20 md:grid-cols-[.65fr_1.35fr] md:py-28">
-          <p className="meta text-[10px] uppercase text-[var(--accent)]">About the journal</p>
           <div>
+            <p className="meta text-[10px] uppercase text-[var(--accent)]">About the journal</p>
+            <DecorativeMotif
+              motif="bunny"
+              sizes="(max-width: 768px) 5rem, 8rem"
+              className="mt-8 w-20 -rotate-[5deg] md:mt-12 md:w-28 lg:w-32"
+            />
+          </div>
+          <div className="relative z-10">
             <h2 className="display max-w-4xl text-5xl sm:text-7xl lg:text-8xl">
               A place to think in public, without pretending the thought is finished.
             </h2>

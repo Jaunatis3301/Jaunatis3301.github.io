@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import DecorativeMotif from "@/components/DecorativeMotif";
 import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
 export const metadata: Metadata = {
@@ -36,7 +37,7 @@ export default function About() {
           <div className="md:pl-10">
             <aside
               aria-label="Author profile and contact"
-              className="mb-12 grid grid-cols-[4.5rem_1fr] gap-5 border-b rule pb-8 sm:grid-cols-[5.5rem_1fr] sm:gap-7"
+              className="mb-12 grid grid-cols-[4.5rem_1fr] gap-5 border-b rule pb-8 sm:grid-cols-[5.5rem_1fr_6rem] sm:gap-7 lg:grid-cols-[5.5rem_1fr_8rem]"
             >
               <div className="relative aspect-square overflow-hidden rounded-full border rule bg-[var(--surface)]">
                 <Image
@@ -62,6 +63,11 @@ export default function About() {
                   GitHub · @Jaunatis3301 ↗
                 </a>
               </div>
+              <DecorativeMotif
+                motif="rose"
+                sizes="(max-width: 1024px) 6rem, 8rem"
+                className="col-start-2 mt-1 w-20 rotate-[5deg] justify-self-end sm:col-start-3 sm:row-start-1 sm:mt-0 sm:w-24 sm:self-center lg:w-32"
+              />
             </aside>
             <div className="prose">
               <p>

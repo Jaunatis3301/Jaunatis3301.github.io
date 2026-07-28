@@ -113,6 +113,23 @@ a {
 .paper-grain {
   position: relative;
 }
+.decorative-motif {
+  pointer-events: none;
+  user-select: none;
+  opacity: 0.72;
+  mix-blend-mode: screen;
+  filter: grayscale(1) contrast(1.04)
+    drop-shadow(0 0 1.25rem color-mix(in srgb, var(--accent) 16%, transparent));
+  transform-origin: center;
+}
+.decorative-motif img {
+  animation: motifSettle 900ms var(--ease-out) both;
+}
+html[data-theme="light"] .decorative-motif {
+  opacity: 0.52;
+  mix-blend-mode: multiply;
+  filter: invert(1) grayscale(1) contrast(0.82);
+}
 .paper-grain:after {
   content: "";
   position: fixed;
@@ -229,6 +246,16 @@ html[data-theme="light"] .paper-grain:before {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+@keyframes motifSettle {
+  from {
+    opacity: 0;
+    transform: translateY(0.75rem) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
   }
 }
 .story-link .story-title {
