@@ -1,72 +1,62 @@
-# Decorative Motifs Design QA
+# Journal Entrance Design QA
 
 ## Comparison Target
 
-- Source visual truth:
-  - `public/images/motifs/new-moon-graffiti.png` (`1254 × 1254`)
-  - `public/images/motifs/jaunrcy-bunny-graffiti.png` (`1024 × 1536`)
-  - `public/images/motifs/thorn-rose-graffiti.png` (`1024 × 1536`)
-- Intended state: the selected silver-white line artwork integrated into the existing ocean-background blog without changing its editorial hierarchy.
-- Implementation evidence:
-  - `/private/tmp/jaunrcy-blog-home-desktop-dark.png`
-  - `/private/tmp/jaunrcy-blog-about-desktop-dark.png`
-  - `/private/tmp/jaunrcy-blog-home-mobile-dark-settled.png`
-  - `/private/tmp/jaunrcy-blog-home-mobile-bunny.png`
-  - `/private/tmp/jaunrcy-blog-about-mobile-profile.png`
-- Combined comparison evidence: `/private/tmp/jaunrcy-motif-design-comparison.png`
+- Source visual truth: `/Users/jaunatis/.codex/generated_images/019f9e5e-daab-7012-8054-0de1b3ade055/exec-b790d6ed-25d6-47c1-82ac-6236a2b6e11f.png`
+- Source pixels: `1487 × 1058`.
+- Implementation route: `/` in the isolated static preview at `http://127.0.0.1:4173/`.
+- State: dark theme, first visit before Enter; post-entry state captured separately.
 
-## Viewports And Normalization
+## Viewports And Density Normalization
 
-- Desktop browser override: `1440 × 1000` CSS px; captured page area `1425 × 990` px.
-- Mobile browser override: `390 × 844` CSS px; captured page area `375 × 812` px.
-- State: dark theme for final visual comparisons; light theme also inspected.
-- The source PNGs were preserved at native resolution and rendered proportionally with no crop or distortion.
-- The combined comparison places native source artwork beside desktop and mobile implementation captures. No density resampling was used when judging the browser captures themselves.
+- Desktop browser viewport: `1280 × 720` CSS px; implementation capture: `1280 × 720` px.
+- Mobile browser viewport: `390 × 844` CSS px; entrance capture: `390 × 844` px.
+- The source mock has a taller aspect ratio than the available desktop browser viewport. For full-view comparison it was proportionally contained inside a `1280 × 720` panel without stretching. A separate lower-region comparison was used for the title, caption, rule, and Enter alignment.
 
-## Full-view Comparison
+## Evidence
 
-- The moon reads as a compact masthead signature and does not collide with the masthead title, metadata, or rule.
-- The bunny creates a restrained transition into the homepage About section without competing with the heading or link.
-- The rose balances the author profile on About and remains visually separate from the avatar, contact link, and body copy.
-- Desktop and mobile layouts have no horizontal overflow.
-
-## Focused Region Comparison
-
-- Homepage mobile masthead: `/private/tmp/jaunrcy-blog-home-mobile-dark-settled.png`
-- Homepage mobile About transition: `/private/tmp/jaunrcy-blog-home-mobile-bunny.png`
-- About mobile author/profile region: `/private/tmp/jaunrcy-blog-about-mobile-profile.png`
-- Focused comparisons were required because the line density and transparency of the motifs are too small to judge reliably in a full-page desktop capture.
+- Desktop entrance: `/private/tmp/jaunrcy-entry-desktop-final.png`
+- Mobile entrance: `/private/tmp/jaunrcy-entry-mobile-final.png`
+- Desktop after Enter: `/private/tmp/jaunrcy-after-enter-desktop.png`
+- Mobile after Enter: `/private/tmp/jaunrcy-after-enter-mobile-final.png`
+- Full-view comparison: `/private/tmp/jaunrcy-entry-design-comparison.jpg`
+- Focused comparison: `/private/tmp/jaunrcy-entry-focused-comparison.jpg`
 
 ## Required Fidelity Surfaces
 
-- Fonts and typography: existing Instrument Serif, Manrope, and DM Mono hierarchy is unchanged; motif placement does not alter wrapping at the tested breakpoints.
-- Spacing and layout rhythm: the desktop grid remains intact; mobile motifs occupy their own visual space and do not overlap interactive or reading content.
-- Colors and visual tokens: dark mode uses `screen` blending at `0.72` opacity; light mode uses `multiply` blending at `0.52` opacity, keeping the artwork within the existing pale-gray accent system.
-- Image quality and asset fidelity: all three selected transparent PNG assets are used directly through `next/image`; alpha edges remain clean, aspect ratios are preserved, and no CSS/SVG substitutes were introduced.
-- Copy and content: no editorial copy, metadata, navigation labels, or links were changed.
+- Fonts and typography: the existing Instrument Serif, DM Mono, and Manrope hierarchy is preserved. The title remains fully visible with intact `J` and `y` descenders; caption text no longer collides with the display glyphs.
+- Spacing and layout rhythm: the lower-left title block, vertical issue rail, long horizontal rule, right-aligned Enter control, top-right moon, and broad negative space follow the selected mock. Mobile reflows the title and action into a single lower composition without overflow.
+- Colors and visual tokens: the entrance stays within black, charcoal, pearl white, and pale gray. The ocean remains visible while retaining the dark editorial atmosphere.
+- Image quality and asset fidelity: the existing ocean photograph and selected moon PNG are used directly. There are no CSS-drawn substitute illustrations, stretched assets, or placeholder imagery.
+- Copy and content: `Jaunrcy`, `A personal journal`, `Issue 01 · Summer 2026`, the journal caption, and `Enter` match the selected direction.
 
-## Interaction And Runtime Checks
+## Interaction And Accessibility Checks
 
-- Theme toggle tested from light to dark; motif blending updates correctly.
-- Mobile navigation opened and closed successfully.
-- Home and About routes rendered successfully.
-- Browser console: no errors. One existing development warning notes that `/images/making-room-for-the-accidental.png` may benefit from eager loading when it is the LCP image; it is unrelated to the new motifs.
-
-## Findings
-
-- No actionable P0, P1, or P2 differences.
-- P3 follow-up only: the existing About-page LCP warning could be addressed separately if performance tuning is requested.
+- Enter is a real keyboard-focusable button and activates the upward cover transition.
+- After the transition, the smaller homepage masthead and featured article become visible.
+- The entrance is recorded in `sessionStorage`; reloading the same tab produced zero entrance dialogs.
+- Background content is inert and hidden from assistive technology while the entrance is open.
+- `prefers-reduced-motion` uses the immediate-entry path and the existing global reduced-motion rules.
+- Mobile and desktop captures have no horizontal overflow.
+- Browser console after Enter: no warnings or errors.
 
 ## Comparison History
 
-- Pass 1: desktop dark/light and mobile dark states reviewed. No P0/P1/P2 issue found, so no corrective comparison loop was required.
+- Pass 0: implementation completed, but rendering was blocked because the source checkout intentionally had no dependencies. Validation moved to `/private/tmp/jaunrcy-entry-validation` after user approval.
+- Pass 1 findings: initial auto-focus produced a visible focus box not present in the mock; the `J` descender crowded the caption. Auto-focus was removed and caption spacing was corrected.
+- Pass 2 finding: the ocean was darker and more blurred than the source direction. Blur was reduced and brightness raised while retaining text contrast.
+- Pass 3: desktop, mobile, post-entry state, one-per-session behavior, console output, and combined visual comparisons were rechecked. No actionable P0, P1, or P2 findings remain.
 
-## Implementation Checklist
+## Validation
 
-- [x] Use the selected v2 bunny and rose assets.
-- [x] Preserve the existing editorial layout and content.
-- [x] Support dark and light themes.
-- [x] Avoid horizontal overflow at desktop and mobile breakpoints.
-- [x] Verify theme and mobile-menu interactions.
+- Prettier check: passed.
+- TypeScript with `--noEmit --incremental false`: passed.
+- Next.js static build: passed; all expected routes exported.
+- All dependencies and build output remain isolated under `/private/tmp/jaunrcy-entry-validation`.
+- Validation created none of `node_modules`, `.next`, `out`, `.DS_Store`, or `tsconfig.tsbuildinfo` in the source repository. One ignored root `.DS_Store` predates this work (`2026-07-24 16:43:39 +0800`) and was left untouched.
+
+## Follow-up Polish
+
+- P3 only: a future capture environment that supports the mock's exact taller desktop aspect ratio could provide a stricter pixel-level full-frame comparison. The focused comparison already confirms the primary entrance composition.
 
 final result: passed

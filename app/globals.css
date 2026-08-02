@@ -110,6 +110,172 @@ a {
 .pressable:active {
   transform: scale(0.98);
 }
+.journal-entrance {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  overflow: hidden;
+  background: #08090a;
+  color: #f4f4f2;
+  transition:
+    transform 1050ms var(--ease-out),
+    visibility 1050ms step-end;
+}
+.journal-entrance__ocean,
+.journal-entrance__veil {
+  position: absolute;
+  inset: -2.5rem;
+  pointer-events: none;
+}
+.journal-entrance__ocean {
+  background-image: url("/images/ocean-background.jpg");
+  background-position: 58% center;
+  background-size: cover;
+  filter: grayscale(1) blur(5px) brightness(0.68) contrast(1.13);
+  transform: scale(1.045);
+  transition:
+    filter 1050ms var(--ease-out),
+    transform 1050ms var(--ease-out);
+}
+.journal-entrance__veil {
+  background:
+    linear-gradient(90deg, rgba(3, 4, 5, 0.62) 0%, rgba(3, 4, 5, 0.33) 48%, rgba(3, 4, 5, 0.12)),
+    linear-gradient(0deg, rgba(3, 4, 5, 0.5), transparent 55%);
+}
+.journal-entrance__issue {
+  position: absolute;
+  left: clamp(1.25rem, 3.8vw, 4.75rem);
+  top: 50%;
+  z-index: 2;
+  color: rgba(244, 244, 242, 0.72);
+  font-size: 0.625rem;
+  text-transform: uppercase;
+  transform: translate(-45%, -50%) rotate(-90deg);
+}
+.journal-entrance__moon {
+  position: absolute;
+  right: clamp(1.5rem, 4vw, 5rem);
+  top: clamp(1.5rem, 5vh, 4.5rem);
+  z-index: 2;
+  opacity: 0.58;
+}
+.journal-entrance__composition {
+  position: absolute;
+  inset: auto clamp(1.5rem, 5.5vw, 6rem) clamp(3.5rem, 8.5vh, 7rem);
+  z-index: 3;
+  display: grid;
+  grid-template-columns: minmax(27rem, 0.72fr) minmax(24rem, 1.28fr);
+  align-items: end;
+  gap: clamp(2.5rem, 5vw, 7rem);
+}
+.journal-entrance__title-block {
+  transition:
+    opacity 500ms ease,
+    transform 700ms var(--ease-out);
+}
+.journal-entrance__title {
+  margin-top: 0.2rem;
+  padding-bottom: 0.07em;
+  font-size: clamp(7.5rem, 12vw, 11.5rem);
+  line-height: 0.8;
+}
+.journal-entrance__caption {
+  margin-top: 0.65rem;
+  margin-left: 2rem;
+  max-width: 34rem;
+  color: rgba(244, 244, 242, 0.68);
+  font-size: clamp(0.625rem, 0.75vw, 0.75rem);
+  line-height: 1.7;
+}
+.journal-entrance__path {
+  display: flex;
+  align-items: center;
+  gap: clamp(1rem, 2vw, 2rem);
+  padding-bottom: clamp(2.75rem, 5.2vw, 5rem);
+}
+.journal-entrance__line {
+  height: 1px;
+  flex: 1;
+  background: rgba(244, 244, 242, 0.56);
+  transform-origin: left;
+  transition: transform 700ms var(--ease-out);
+}
+.journal-entrance__enter {
+  display: inline-flex;
+  min-height: 2.75rem;
+  align-items: center;
+  gap: 0.75rem;
+  border: 0;
+  background: transparent;
+  color: #f4f4f2;
+  cursor: pointer;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  transition:
+    color var(--dur-1),
+    transform var(--dur-2) var(--ease-out);
+}
+.journal-entrance__enter:hover {
+  color: #d7d8dc;
+  transform: translateX(0.35rem);
+}
+.journal-entrance--leaving {
+  visibility: hidden;
+  transform: translateY(-100%);
+}
+.journal-entrance--leaving .journal-entrance__ocean {
+  filter: grayscale(1) blur(12px) brightness(0.76) contrast(1.08);
+  transform: scale(1.12);
+}
+.journal-entrance--leaving .journal-entrance__title-block {
+  opacity: 0;
+  transform: translateY(-1.5rem);
+}
+.journal-entrance--leaving .journal-entrance__line {
+  transform: scaleX(1.08);
+}
+@media (max-width: 767px) {
+  .journal-entrance__ocean {
+    background-position: 72% center;
+    filter: grayscale(1) blur(4px) brightness(0.64) contrast(1.1);
+  }
+  .journal-entrance__veil {
+    background:
+      linear-gradient(0deg, rgba(3, 4, 5, 0.66), transparent 58%),
+      linear-gradient(90deg, rgba(3, 4, 5, 0.4), rgba(3, 4, 5, 0.08));
+  }
+  .journal-entrance__issue {
+    left: 1.5rem;
+    top: 6.5rem;
+    transform: none;
+  }
+  .journal-entrance__moon {
+    right: 1.25rem;
+    top: 5.25rem;
+    width: 5rem;
+  }
+  .journal-entrance__composition {
+    inset: auto 1.5rem max(2.5rem, env(safe-area-inset-bottom));
+    display: block;
+  }
+  .journal-entrance__title {
+    font-size: clamp(5.25rem, 26vw, 7.4rem);
+    line-height: 0.84;
+  }
+  .journal-entrance__caption {
+    margin-left: 0;
+    max-width: 19rem;
+    font-size: 0.625rem;
+  }
+  .journal-entrance__path {
+    gap: 1rem;
+    margin-top: 2.25rem;
+    padding-bottom: 0;
+  }
+  .journal-entrance__enter {
+    font-size: 0.6875rem;
+  }
+}
 .paper-grain {
   position: relative;
 }
