@@ -6,7 +6,7 @@ const latestPost = posts.find((post) => !post.featured)!;
 
 function StoryMeta({ number, category, date }: { number: string; category: string; date: string }) {
   return (
-    <p className="meta flex gap-3 text-[10px] uppercase text-[var(--muted)]">
+    <p className="meta flex gap-3 text-[11px] uppercase text-[var(--muted)]">
       <span className="text-[var(--accent)]">{number}</span>
       <span>{category}</span>
       <span>·</span>

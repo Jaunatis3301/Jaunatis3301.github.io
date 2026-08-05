@@ -61,7 +61,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
           <header className="page-shell grid gap-7 pb-10 pt-10 md:grid-cols-[5.5rem_1fr] md:gap-10 md:pb-16">
             <IssueRail post={post} />
             <div>
-              <p className="meta text-[10px] uppercase text-[var(--accent)]">
+              <p className="meta text-[11px] uppercase text-[var(--accent)]">
                 {post.category} · {post.readingTime}
               </p>
               <h1 className="display mt-5 max-w-6xl text-6xl sm:text-8xl lg:text-[8.5rem]">
@@ -81,7 +81,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
             />
           </div>
           <div className="page-shell grid gap-8 py-14 md:grid-cols-[5.5rem_1fr] md:gap-10 md:py-20">
-            <div className="meta text-[10px] uppercase text-[var(--muted)]">
+            <div className="meta text-[11px] uppercase text-[var(--muted)]">
               <p>Words & images</p>
               <p className="mt-2 text-[var(--ink)]">jaunrcy</p>
             </div>
@@ -99,7 +99,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
           </div>
         </article>
         <aside className="page-shell mb-20 border-y rule py-10">
-          <p className="meta text-[10px] uppercase text-[var(--muted)]">Continue reading</p>
+          <p className="meta text-[11px] uppercase text-[var(--muted)]">Continue reading</p>
           <Link
             href={`/journal/${related.slug}`}
             className="story-link focus-ring mt-5 flex items-end justify-between gap-6"

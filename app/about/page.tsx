@@ -13,13 +13,13 @@ export default function About() {
       <SiteHeader />
       <main id="main" className="page-shell pb-24 pt-10">
         <header className="grid gap-8 border-b rule pb-14 md:grid-cols-[.55fr_1.45fr]">
-          <p className="meta text-[10px] uppercase text-[var(--accent)]">About me</p>
+          <p className="meta text-[11px] uppercase text-[var(--accent)]">About me</p>
           <div>
-            <h1 className="display text-6xl sm:text-8xl lg:text-[9rem]">
+            <h1 className="display page-title">
               A journal of the self, its thoughts, and its quiet feelings.
             </h1>
             <p className="mt-8 max-w-2xl text-lg leading-8 text-[var(--muted)]">
-              Jauncry is my personal moniker, a record of how I think.
+              Jaunrcy is my personal moniker, a record of how I think.
             </p>
           </div>
         </header>
@@ -49,7 +49,7 @@ export default function About() {
                 />
               </div>
               <div className="self-center">
-                <p className="meta text-[10px] uppercase text-[var(--accent)]">Author</p>
+                <p className="meta text-[11px] uppercase text-[var(--accent)]">Author</p>
                 <h2 className="mt-2 text-xl font-medium sm:text-2xl">jaunrcy</h2>
                 <p className="mt-2 max-w-xl text-sm leading-6 text-[var(--muted)]">
                   Turning My Life into a Magazine

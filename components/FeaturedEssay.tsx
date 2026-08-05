@@ -24,12 +24,12 @@ export default function FeaturedEssay() {
             sizes="(max-width: 768px) 100vw, 58vw"
           />
           <span className="cinematic-overlay absolute inset-0" />
-          <span className="meta absolute bottom-5 left-5 text-[10px] uppercase text-white/80">
+          <span className="meta absolute bottom-5 left-5 text-[11px] uppercase text-white/80">
             Featured visual essay
           </span>
         </Link>
         <div className="flex flex-col justify-end md:pb-4">
-          <p className="meta fade-up delay-1 text-[10px] uppercase text-[var(--accent)]">
+          <p className="meta fade-up delay-1 text-[11px] uppercase text-[var(--accent)]">
             Editor’s selection
           </p>
           <h2

@@ -78,7 +78,7 @@ export default function JournalEntrance() {
 
       <div className="journal-entrance__composition">
         <div className="journal-entrance__title-block">
-          <p className="meta text-[10px] uppercase tracking-[.18em]">A personal journal</p>
+          <p className="meta text-[11px] uppercase tracking-[.18em]">A personal journal</p>
           <h1 className="display journal-entrance__title">Jaunrcy</h1>
           <p className="journal-entrance__caption meta">
             Notes on images, work, and the things still unresolved.

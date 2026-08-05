@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 const items = [
   ["Journal", "/journal"],
@@ -9,6 +10,7 @@ const items = [
 ];
 export default function MobileNavigation() {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
   useEffect(() => {
     const close = (e: KeyboardEvent) => {
       if (e.key === "Escape") setOpen(false);
@@ -33,17 +35,24 @@ export default function MobileNavigation() {
         className={`fixed inset-x-0 top-0 origin-top-right bg-[var(--bg)] px-5 pb-10 pt-24 transition-[opacity,transform,visibility] duration-300 ${open ? "visible scale-100 opacity-100" : "pointer-events-none invisible scale-[.98] opacity-0"}`}
       >
         <nav className="border-y rule" aria-label="Mobile navigation">
-          {items.map(([label, href]) => (
-            <Link
-              tabIndex={open ? 0 : -1}
-              onClick={() => setOpen(false)}
-              key={label}
-              href={href}
-              className="focus-ring display block border-b rule py-5 text-4xl last:border-0"
-            >
-              {label}
-            </Link>
-          ))}
+          {items.map(([label, href]) => {
+            const active = pathname === href || pathname.startsWith(`${href}/`);
+            return (
+              <Link
+                aria-current={active ? "page" : undefined}
+                tabIndex={open ? 0 : -1}
+                onClick={() => setOpen(false)}
+                key={label}
+                href={href}
+                className={`focus-ring display flex items-center justify-between border-b rule py-5 text-4xl last:border-0 ${active ? "text-[var(--accent)]" : ""}`}
+              >
+                {label}
+                {active && (
+                  <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-current" />
+                )}
+              </Link>
+            );
+          })}
         </nav>
       </div>
     </div>

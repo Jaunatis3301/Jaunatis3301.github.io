@@ -16,16 +16,14 @@ export default function FragmentsPage() {
       <main id="main" className="page-shell pb-24 pt-10">
         <header className="grid gap-8 border-b rule pb-12 md:grid-cols-[.55fr_1.45fr]">
           <div>
-            <p className="meta text-[10px] uppercase text-[var(--accent)]">
+            <p className="meta text-[11px] uppercase text-[var(--accent)]">
               Brief observations · Issue 01
             </p>
             <p className="mt-5 max-w-xs text-sm leading-6 text-[var(--muted)]">
               Passing images, unfinished thoughts, and details too small to become essays.
             </p>
           </div>
-          <h1 className="display text-[22vw] leading-[.72] sm:text-[9rem] lg:text-[13rem]">
-            Fragments
-          </h1>
+          <h1 className="display page-title">Fragments</h1>
         </header>
         <section aria-label="Fragments archive" className="grid gap-x-10 md:grid-cols-2">
           {fragments.map((fragment, index) => (
@@ -44,7 +42,7 @@ export default function FragmentsPage() {
                   />
                 </div>
               )}
-              <div className="meta flex items-center justify-between gap-4 text-[10px] uppercase text-[var(--muted)]">
+              <div className="meta flex items-center justify-between gap-4 text-[11px] uppercase text-[var(--muted)]">
                 <span>
                   <span className="text-[var(--accent)]">{String(index + 1).padStart(2, "0")}</span>{" "}
                   · {fragment.place}
@@ -54,7 +52,7 @@ export default function FragmentsPage() {
               <blockquote className="display mt-8 text-4xl leading-[1.02] sm:text-5xl">
                 “{fragment.text}”
               </blockquote>
-              <p className="meta mt-7 text-[10px] uppercase text-[var(--muted)]">{fragment.date}</p>
+              <p className="meta mt-7 text-[11px] uppercase text-[var(--muted)]">{fragment.date}</p>
             </article>
           ))}
         </section>

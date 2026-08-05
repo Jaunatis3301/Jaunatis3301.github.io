@@ -51,7 +51,7 @@ export default function JournalArchive() {
               href={`/journal/${post.slug}`}
               className="story-link focus-ring grid gap-5 py-8 sm:grid-cols-[5rem_1fr_11rem] sm:items-center lg:grid-cols-[7rem_1fr_19rem]"
             >
-              <div className="meta flex gap-3 text-[10px] uppercase text-[var(--muted)] sm:block">
+              <div className="meta flex gap-3 text-[11px] uppercase text-[var(--muted)] sm:block">
                 <p className="text-[var(--accent)]">No. {post.number}</p>
                 <p className="sm:mt-2">{post.category}</p>
               </div>
@@ -60,7 +60,7 @@ export default function JournalArchive() {
                   {post.title}
                 </h2>
                 <p className="mt-3 max-w-2xl text-sm leading-6 text-[var(--muted)]">{post.dek}</p>
-                <p className="meta mt-4 text-[10px] uppercase text-[var(--muted)]">
+                <p className="meta mt-4 text-[11px] uppercase text-[var(--muted)]">
                   {post.date} · {post.readingTime}{" "}
                   <ArrowUpRight className="ml-1 inline" size={13} />
                 </p>

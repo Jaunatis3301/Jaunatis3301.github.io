@@ -5,7 +5,7 @@ export default function NotFound() {
     <>
       <SiteHeader />
       <main id="main" className="page-shell flex min-h-[70vh] flex-col justify-center py-20">
-        <p className="meta text-[10px] uppercase text-[var(--accent)]">404 · Outside the frame</p>
+        <p className="meta text-[11px] uppercase text-[var(--accent)]">404 · Outside the frame</p>
         <h1 className="display mt-5 text-7xl sm:text-9xl">Nothing is printed here.</h1>
         <p className="mt-6 max-w-md text-[var(--muted)]">
           The page may have moved, or perhaps it was only ever an unfinished note.

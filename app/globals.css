@@ -13,7 +13,7 @@
   --accent-2: #bfc1c6;
   --on-accent: #111214;
   --rule: rgba(220, 222, 227, 0.24);
-  --background-tint: rgba(5, 6, 8, 0.18);
+  --background-tint: rgba(5, 6, 8, 0.72);
   --dur-1: 160ms;
   --dur-2: 320ms;
   --dur-3: 720ms;
@@ -32,7 +32,7 @@ html[data-theme="light"] {
   --accent-2: #969aa1;
   --on-accent: #ffffff;
   --rule: rgba(74, 78, 84, 0.24);
-  --background-tint: rgba(241, 242, 243, 0.5);
+  --background-tint: rgba(241, 242, 243, 0.82);
 }
 
 html[data-theme="dark"] {
@@ -51,7 +51,7 @@ html[data-theme="dark"] {
     --accent-2: #969aa1;
     --on-accent: #ffffff;
     --rule: rgba(74, 78, 84, 0.24);
-    --background-tint: rgba(241, 242, 243, 0.5);
+    --background-tint: rgba(241, 242, 243, 0.82);
   }
 }
 * {
@@ -89,6 +89,37 @@ a {
 .meta {
   font-family: var(--font-dm-mono), monospace;
   letter-spacing: 0.045em;
+}
+.page-title {
+  font-size: clamp(3.5rem, 7vw, 6.75rem);
+  line-height: 0.86;
+}
+.nav-link {
+  position: relative;
+  padding-block: 0.45rem;
+  transition: color var(--dur-1);
+}
+.nav-link:after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 1px;
+  background: currentColor;
+  opacity: 0;
+  transform: scaleX(0.35);
+  transition:
+    opacity var(--dur-1),
+    transform var(--dur-2) var(--ease-out);
+}
+.nav-link:hover,
+.nav-link--active {
+  color: var(--accent);
+}
+.nav-link--active:after {
+  opacity: 0.72;
+  transform: scaleX(1);
 }
 .page-shell {
   width: min(100% - 2rem, 92rem);
@@ -148,7 +179,7 @@ a {
   top: 50%;
   z-index: 2;
   color: rgba(244, 244, 242, 0.72);
-  font-size: 0.625rem;
+  font-size: 0.6875rem;
   text-transform: uppercase;
   transform: translate(-45%, -50%) rotate(-90deg);
 }
@@ -184,7 +215,7 @@ a {
   margin-left: 2rem;
   max-width: 34rem;
   color: rgba(244, 244, 242, 0.68);
-  font-size: clamp(0.625rem, 0.75vw, 0.75rem);
+  font-size: clamp(0.6875rem, 0.75vw, 0.75rem);
   line-height: 1.7;
 }
 .journal-entrance__path {
@@ -265,7 +296,7 @@ a {
   .journal-entrance__caption {
     margin-left: 0;
     max-width: 19rem;
-    font-size: 0.625rem;
+    font-size: 0.6875rem;
   }
   .journal-entrance__path {
     gap: 1rem;
@@ -307,8 +338,16 @@ html[data-theme="light"] .decorative-motif {
     url("/images/ocean-background.jpg");
   background-position: 58% center;
   background-size: cover;
-  filter: blur(12px) brightness(1.2) contrast(1.06);
-  transform: scale(1.035);
+  filter: blur(20px) brightness(0.7) contrast(0.88);
+  transform: scale(1.08);
+}
+html[data-theme="light"] .paper-grain:after {
+  filter: blur(20px) brightness(1.02) contrast(0.82);
+}
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme]) .paper-grain:after {
+    filter: blur(20px) brightness(1.02) contrast(0.82);
+  }
 }
 @media (max-width: 640px) {
   .paper-grain:after {

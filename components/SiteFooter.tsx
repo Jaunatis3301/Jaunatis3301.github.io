@@ -21,7 +21,7 @@ export default function SiteFooter() {
           </Link>
         </nav>
       </div>
-      <div className="meta mt-12 flex flex-col gap-2 border-t rule pt-4 text-[10px] text-[var(--muted)] sm:flex-row sm:justify-between">
+      <div className="meta mt-12 flex flex-col gap-2 border-t rule pt-4 text-[11px] text-[var(--muted)] sm:flex-row sm:justify-between">
         <span>© 2026 jaunrcy</span>
         <span>Issue 01 · Beijing / Paris</span>
       </div>
