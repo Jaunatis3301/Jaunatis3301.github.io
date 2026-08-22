@@ -49,7 +49,7 @@ export default function FragmentsPage() {
                 </span>
                 <span>{fragment.time}</span>
               </div>
-              <blockquote className="display mt-8 text-4xl leading-[1.02] sm:text-5xl">
+              <blockquote className="display mt-8 text-3xl leading-[1.02] sm:text-4xl">
                 “{fragment.text}”
               </blockquote>
               <p className="meta mt-7 text-[11px] uppercase text-[var(--muted)]">{fragment.date}</p>

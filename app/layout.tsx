@@ -1,19 +1,16 @@
 import type { Metadata, Viewport } from "next";
-import { DM_Mono, Instrument_Serif, Manrope } from "next/font/google";
+import { Manrope } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
-const display = Instrument_Serif({
-  subsets: ["latin"],
+
+const departure = localFont({
+  src: "../public/fonts/departure-mono/DepartureMono-Regular.woff2",
   weight: "400",
-  variable: "--font-instrument",
+  style: "normal",
+  variable: "--font-departure-mono",
   display: "swap",
 });
 const sans = Manrope({ subsets: ["latin"], variable: "--font-manrope", display: "swap" });
-const mono = DM_Mono({
-  subsets: ["latin"],
-  weight: ["300", "400", "500"],
-  variable: "--font-dm-mono",
-  display: "swap",
-});
 export const metadata: Metadata = {
   metadataBase: new URL("https://jaunatis3301.github.io"),
   title: { default: "jaunrcy — A Personal Journal", template: "%s — jaunrcy" },
@@ -58,7 +55,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
-      <body className={`${display.variable} ${sans.variable} ${mono.variable} paper-grain`}>
+      <body className={`${departure.variable} ${sans.variable} paper-grain`}>
         <a
           href="#main"
           className="focus-ring fixed left-3 top-3 z-[100] -translate-y-20 bg-[var(--ink)] px-4 py-3 text-[var(--bg)] focus:translate-y-0"

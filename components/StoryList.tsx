@@ -18,7 +18,7 @@ export default function StoryList() {
   return (
     <section aria-labelledby="latest-title" className="page-shell pb-20 md:pb-28">
       <div className="flex items-end justify-between border-b rule pb-4">
-        <h2 id="latest-title" className="display text-5xl sm:text-6xl">
+        <h2 id="latest-title" className="display text-4xl sm:text-5xl">
           Latest story
         </h2>
         <Link className="focus-ring hidden text-sm sm:block" href="/journal">
@@ -42,7 +42,7 @@ export default function StoryList() {
             </div>
             <div>
               <StoryMeta {...latestPost} />
-              <h3 className="story-title display mt-4 text-5xl lg:text-7xl">{latestPost.title}</h3>
+              <h3 className="story-title display mt-4 text-4xl lg:text-5xl">{latestPost.title}</h3>
               <p className="mt-5 max-w-lg text-sm leading-7 text-[var(--muted)]">
                 {latestPost.dek}
               </p>

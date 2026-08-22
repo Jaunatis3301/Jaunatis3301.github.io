@@ -11,7 +11,7 @@ export default function Masthead() {
       <div className="line-reveal masthead-reveal relative z-10 mt-5">
         <h1
           id="masthead-title"
-          className="display pb-[0.1em] text-[17vw] leading-[.86] sm:text-[12vw] lg:text-[9vw] xl:text-[8rem]"
+          className="display pb-[0.1em] text-[13vw] leading-[.88] sm:text-[10vw] lg:text-[8vw] xl:text-[5.5rem]"
         >
           Jaunrcy
         </h1>

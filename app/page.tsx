@@ -20,7 +20,7 @@ export default function Home() {
               <p className="meta text-[11px] uppercase text-[var(--accent)]">About the journal</p>
             </div>
             <div className="relative z-10">
-              <h2 className="display max-w-4xl text-5xl sm:text-7xl lg:text-8xl">
+              <h2 className="display max-w-4xl text-4xl sm:text-5xl lg:text-6xl">
                 A place to think in public, without pretending the thought is finished.
               </h2>
               <p className="mt-8 max-w-2xl leading-7 text-[var(--muted)]">

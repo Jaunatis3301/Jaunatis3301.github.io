@@ -34,7 +34,7 @@ export default function FeaturedEssay() {
           </p>
           <h2
             id="featured-title"
-            className="story-title display fade-up delay-2 mt-4 text-5xl sm:text-6xl md:text-5xl lg:text-7xl"
+            className="story-title display fade-up delay-2 mt-4 text-3xl sm:text-4xl md:text-3xl lg:text-5xl"
           >
             {post.title}
           </h2>

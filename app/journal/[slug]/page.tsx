@@ -64,7 +64,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
               <p className="meta text-[11px] uppercase text-[var(--accent)]">
                 {post.category} · {post.readingTime}
               </p>
-              <h1 className="display mt-5 max-w-6xl text-6xl sm:text-8xl lg:text-[8.5rem]">
+              <h1 className="display mt-5 max-w-6xl text-4xl sm:text-5xl lg:text-7xl">
                 {post.title}
               </h1>
               <p className="mt-8 max-w-2xl text-base leading-8 text-[var(--muted)]">{post.dek}</p>
@@ -104,7 +104,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
             href={`/journal/${related.slug}`}
             className="story-link focus-ring mt-5 flex items-end justify-between gap-6"
           >
-            <span className="story-title display text-4xl sm:text-6xl">{related.title}</span>
+            <span className="story-title display text-3xl sm:text-4xl">{related.title}</span>
             <span aria-hidden="true">→</span>
           </Link>
         </aside>
