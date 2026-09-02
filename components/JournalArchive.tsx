@@ -43,19 +43,25 @@ export default function JournalArchive() {
       <section
         aria-live="polite"
         aria-label="Journal entries"
-        className="divide-y divide-[var(--rule)]"
+        className="journal-grid py-10 md:py-16"
       >
-        {visiblePosts.map((post) => (
-          <article key={post.slug}>
-            <Link
-              href={`/journal/${post.slug}`}
-              className="story-link focus-ring grid gap-5 py-8 sm:grid-cols-[5rem_1fr_11rem] sm:items-center lg:grid-cols-[7rem_1fr_19rem]"
-            >
-              <div className="meta flex gap-3 text-[11px] uppercase text-[var(--muted)] sm:block">
-                <p className="text-[var(--accent)]">No. {post.number}</p>
-                <p className="sm:mt-2">{post.category}</p>
+        {visiblePosts.map((post, index) => (
+          <article className={`journal-card journal-card--${(index % 3) + 1}`} key={post.slug}>
+            <Link href={`/journal/${post.slug}`} className="story-link focus-ring block">
+              <div className="media-frame journal-card__image relative overflow-hidden bg-[var(--surface)]">
+                <Image
+                  src={post.image}
+                  alt={post.imageAlt}
+                  fill
+                  sizes="(max-width: 640px) 100vw, 50vw"
+                  className="object-cover"
+                />
               </div>
-              <div>
+              <div className="pt-5">
+                <div className="meta flex justify-between gap-4 text-[11px] uppercase text-[var(--muted)]">
+                  <span className="text-[var(--accent)]">No. {post.number}</span>
+                  <span>{post.category}</span>
+                </div>
                 <h2 className="story-title display text-3xl sm:text-4xl lg:text-5xl">
                   {post.title}
                 </h2>
@@ -64,15 +70,6 @@ export default function JournalArchive() {
                   {post.date} · {post.readingTime}{" "}
                   <ArrowUpRight className="ml-1 inline" size={13} />
                 </p>
-              </div>
-              <div className="relative aspect-[4/3] overflow-hidden bg-[var(--surface)]">
-                <Image
-                  src={post.image}
-                  alt={post.imageAlt}
-                  fill
-                  sizes="(max-width: 640px) 100vw, 20vw"
-                  className="object-cover"
-                />
               </div>
             </Link>
           </article>

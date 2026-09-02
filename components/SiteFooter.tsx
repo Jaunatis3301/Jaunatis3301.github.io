@@ -1,8 +1,11 @@
 import Link from "next/link";
 export default function SiteFooter() {
   return (
-    <footer className="page-shell border-t rule py-10">
-      <div className="grid gap-8 md:grid-cols-[1fr_auto]">
+    <footer className="page-shell border-t rule py-10 md:py-14">
+      <p className="display footer-wordmark pb-10 text-[clamp(3.5rem,11vw,9rem)] leading-none">
+        Jaunrcy
+      </p>
+      <div className="grid gap-8 border-t rule pt-7 md:grid-cols-[1fr_auto]">
         <div>
           <p className="meta text-sm tracking-[.25em]">jaunrcy</p>
           <p className="mt-3 max-w-sm text-sm text-[var(--muted)]">

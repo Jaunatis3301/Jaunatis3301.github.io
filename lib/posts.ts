@@ -29,7 +29,7 @@ export const posts: Post[] = [
       {
         paragraphs: [
           "I used to believe that looking was simply a matter of keeping one’s eyes open. The camera taught me otherwise. Attention has a temperature, a duration, and a distance of its own.",
-          "At a station between two cities, I watched the light move across a stone floor until the room seemed to reveal a second architecture—one made only of shadow and waiting.",
+          "At a station between two cities, I watched the light move across a stone floor until the room seemed to reveal a second architecture, one made only of shadow and waiting.",
         ],
       },
       {
@@ -82,9 +82,8 @@ export const posts: Post[] = [
     dek: "How memory, weather, and exposure change the emotional truth of a scene.",
     date: "June 18, 2026",
     readingTime: "6 min read",
-    image: hero,
-    imageAlt:
-      "Architecture and a lone observer held between warm interior stone and cool exterior sky",
+    image: "/images/covers/01-indigo-passage.png",
+    imageAlt: "A solitary figure crossing a rain-dark concrete passage lit by saturated blue light",
     body: [
       {
         paragraphs: [
@@ -109,12 +108,12 @@ export const posts: Post[] = [
     dek: "A conversation about absence, editing, and the ethics of attention.",
     date: "May 30, 2026",
     readingTime: "11 min read",
-    image: studio,
-    imageAlt: "A quiet editing room with film material gathered beneath mixed warm and cool light",
+    image: "/images/covers/08-film-archive.png",
+    imageAlt: "Film negatives hanging beneath a desk lamp in a dark archive",
     body: [
       {
         paragraphs: [
-          "Every frame is an argument made by exclusion. To point the camera is to decide what matters now—and what will disappear without witness.",
+          "Every frame is an argument made by exclusion. To point the camera is to decide what matters now, and what will disappear without witness.",
         ],
         quote: "Editing is not the art of removal. It is the art of responsibility.",
       },
@@ -135,8 +134,8 @@ export const posts: Post[] = [
     dek: "Brief observations collected between cities.",
     date: "May 12, 2026",
     readingTime: "4 min read",
-    image: hero,
-    imageAlt: "Railway lines seen through a sequence of tall station windows",
+    image: "/images/covers/02-night-train.png",
+    imageAlt: "An empty night train with rain caught against its dark windows",
     body: [
       {
         paragraphs: [

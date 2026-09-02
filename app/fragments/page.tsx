@@ -29,10 +29,10 @@ export default function FragmentsPage() {
           {fragments.map((fragment, index) => (
             <article
               key={fragment.id}
-              className={`border-b rule py-10 md:py-14 ${index % 3 === 1 ? "md:mt-24" : ""}`}
+              className={`section-reveal border-b rule py-10 md:py-14 ${index % 3 === 1 ? "md:mt-24" : ""}`}
             >
               {fragment.image && fragment.imageAlt && (
-                <div className="relative mb-7 aspect-[3/2] overflow-hidden bg-[var(--surface)]">
+                <div className="media-frame relative mb-7 aspect-[3/2] overflow-hidden bg-[var(--surface)]">
                   <Image
                     src={fragment.image}
                     alt={fragment.imageAlt}

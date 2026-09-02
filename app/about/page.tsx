@@ -23,8 +23,8 @@ export default function About() {
             </p>
           </div>
         </header>
-        <section className="grid gap-8 py-14 md:grid-cols-[.75fr_1.25fr] md:py-20">
-          <div className="relative aspect-[4/5] overflow-hidden bg-[var(--surface)]">
+        <section className="section-reveal grid gap-8 py-14 md:grid-cols-[.75fr_1.25fr] md:py-20">
+          <div className="media-frame relative aspect-[4/5] overflow-hidden bg-[var(--surface)]">
             <Image
               src="/images/making-room-for-the-accidental.png"
               alt="jaunrcy’s editing desk, covered with film strips and working notes"
@@ -37,7 +37,7 @@ export default function About() {
           <div className="md:pl-10">
             <aside
               aria-label="Author profile and contact"
-              className="mb-12 grid grid-cols-[4.5rem_1fr] gap-5 border-b rule pb-8 sm:grid-cols-[5.5rem_1fr_6rem] sm:gap-7 lg:grid-cols-[5.5rem_1fr_8rem]"
+              className="profile-panel relative mb-12 grid grid-cols-[4.5rem_1fr] gap-5 overflow-visible sm:grid-cols-[5.5rem_1fr] sm:gap-7"
             >
               <div className="relative aspect-square overflow-hidden rounded-full border rule bg-[var(--surface)]">
                 <Image
@@ -48,7 +48,7 @@ export default function About() {
                   className="object-cover"
                 />
               </div>
-              <div className="self-center">
+              <div className="relative z-10 self-center sm:pr-24 lg:pr-36">
                 <p className="meta text-[11px] uppercase text-[var(--accent)]">Author</p>
                 <h2 className="mt-2 text-xl font-medium sm:text-2xl">jaunrcy</h2>
                 <p className="mt-2 max-w-xl text-sm leading-6 text-[var(--muted)]">
@@ -65,8 +65,8 @@ export default function About() {
               </div>
               <DecorativeMotif
                 motif="rose"
-                sizes="(max-width: 1024px) 6rem, 8rem"
-                className="col-start-2 mt-1 w-20 rotate-[5deg] justify-self-end sm:col-start-3 sm:row-start-1 sm:mt-0 sm:w-24 sm:self-center lg:w-32"
+                sizes="(max-width: 640px) 7rem, (max-width: 1024px) 11rem, 14rem"
+                className="profile-panel__rose w-28 sm:w-44 lg:w-56"
               />
             </aside>
             <div className="prose">
@@ -80,8 +80,8 @@ export default function About() {
                 I’m a university student from Northeast China, now living and studying far from home
                 in Hangzhou. My goal is to become an independent developer and security researcher.
                 Through words, photographs, and videos, I want to document what it feels like to be
-                the protagonist of my own life—the things I notice, experience, question, and learn
-                along the way—as I work toward the life I truly want to live.
+                the protagonist of my own life: the things I notice, experience, question, and learn
+                along the way, as I work toward the life I truly want to live.
               </p>
               <blockquote>
                 jaunrcy is where the unfinished thought is allowed to keep its edges.

@@ -62,7 +62,7 @@ export const fragments: Fragment[] = [
     id: "train-window",
     date: "May 12, 2026",
     place: "En route",
-    time: "—",
+    time: "-",
     text: "A window, a reflection, then a landscape that belongs to neither side.",
   },
   {
@@ -79,6 +79,6 @@ export const fragments: Fragment[] = [
     date: "April 18, 2026",
     place: "Beijing",
     time: "22:03",
-    text: "After rain, every street briefly becomes a second city—one built underneath the first.",
+    text: "After rain, every street briefly becomes a second city, one built underneath the first.",
   },
 ];

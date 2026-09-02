@@ -19,7 +19,7 @@ export default function Journal() {
           </p>
           <h1 className="display page-title mt-5">Journal</h1>
           <p className="mt-8 max-w-xl leading-7 text-[var(--muted)]">
-            I think I am alive. Back to life in the night, the muses tell me it is my time—and I
+            I think I am alive. Back to life in the night, the muses tell me it is my time, and I
             write to the sky.
           </p>
         </header>

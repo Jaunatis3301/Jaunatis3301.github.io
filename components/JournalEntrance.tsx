@@ -72,8 +72,8 @@ export default function JournalEntrance() {
       <DecorativeMotif
         motif="moon"
         priority
-        sizes="(max-width: 640px) 5rem, 8rem"
-        className="journal-entrance__moon w-20 md:w-28 lg:w-32"
+        sizes="(max-width: 640px) 5rem, 10rem"
+        className="journal-entrance__moon w-20 md:w-32 lg:w-40"
       />
 
       <div className="journal-entrance__composition">

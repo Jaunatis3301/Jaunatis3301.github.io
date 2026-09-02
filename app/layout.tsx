@@ -13,48 +13,23 @@ const departure = localFont({
 const sans = Manrope({ subsets: ["latin"], variable: "--font-manrope", display: "swap" });
 export const metadata: Metadata = {
   metadataBase: new URL("https://jaunatis3301.github.io"),
-  title: { default: "jaunrcy — A Personal Journal", template: "%s — jaunrcy" },
+  title: { default: "jaunrcy - A Personal Journal", template: "%s - jaunrcy" },
   description:
     "A personal journal about cinema, visual culture, color, memory, and the creative process.",
   openGraph: {
-    title: "jaunrcy — A Personal Journal",
+    title: "jaunrcy - A Personal Journal",
     description: "Notes on images, work, and the things still unresolved.",
     type: "website",
   },
 };
 export const viewport: Viewport = {
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#f1f2f3" },
-    { media: "(prefers-color-scheme: dark)", color: "#08090a" },
-  ],
-  colorScheme: "light dark",
+  themeColor: "#08090a",
+  colorScheme: "dark",
 };
-
-const themeScript = `
-  (() => {
-    try {
-      const savedTheme = localStorage.getItem("jaunrcy-theme");
-      const theme =
-        savedTheme === "light" || savedTheme === "dark"
-          ? savedTheme
-          : matchMedia("(prefers-color-scheme: light)").matches
-            ? "light"
-            : "dark";
-
-      document.documentElement.dataset.theme = theme;
-      document.documentElement.style.colorScheme = theme;
-    } catch {
-      document.documentElement.dataset.theme = "dark";
-    }
-  })();
-`;
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" data-scroll-behavior="smooth" suppressHydrationWarning>
-      <head>
-        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
-      </head>
+    <html lang="en" data-theme="dark" data-scroll-behavior="smooth">
       <body className={`${departure.variable} ${sans.variable} paper-grain`}>
         <a
           href="#main"
