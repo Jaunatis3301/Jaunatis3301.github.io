@@ -5,7 +5,7 @@ import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
 export const metadata: Metadata = {
   title: "About",
-  description: "About jaunrcy and this independent personal journal.",
+  description: "About jaunrcy and this independent personal note.",
 };
 export default function About() {
   return (
@@ -16,7 +16,7 @@ export default function About() {
           <p className="meta text-[11px] uppercase text-[var(--accent)]">About me</p>
           <div>
             <h1 className="display page-title">
-              A journal of the self, its thoughts, and its quiet feelings.
+              A note of the self, its thoughts, and its quiet feelings.
             </h1>
             <p className="mt-8 max-w-2xl text-lg leading-8 text-[var(--muted)]">
               Jaunrcy is my personal moniker, a record of how I think.

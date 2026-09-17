@@ -1,7 +1,6 @@
 export type Post = {
   slug: string;
   number: string;
-  category: string;
   title: string;
   dek: string;
   date: string;
@@ -17,7 +16,6 @@ export const posts: Post[] = [
   {
     slug: "distance-between-looking-and-seeing",
     number: "01",
-    category: "Visual Essay",
     title: "The Distance Between Looking and Seeing",
     dek: "A field note on patient observation, imperfect memory, and the frames we keep long after a place has disappeared.",
     date: "July 18, 2026",
@@ -51,7 +49,6 @@ export const posts: Post[] = [
   {
     slug: "making-room-for-the-accidental",
     number: "02",
-    category: "Process",
     title: "Making Room for the Accidental",
     dek: "A note on looseness, unfinished plans, and the moments that make creative work feel alive.",
     date: "July 4, 2026",
@@ -77,7 +74,6 @@ export const posts: Post[] = [
   {
     slug: "the-blue-hour-is-not-blue",
     number: "03",
-    category: "Color",
     title: "The Blue Hour Is Not Blue",
     dek: "How memory, weather, and exposure change the emotional truth of a scene.",
     date: "June 18, 2026",
@@ -103,7 +99,6 @@ export const posts: Post[] = [
   {
     slug: "what-we-leave-outside-the-frame",
     number: "04",
-    category: "Conversation",
     title: "What We Leave Outside the Frame",
     dek: "A conversation about absence, editing, and the ethics of attention.",
     date: "May 30, 2026",
@@ -129,7 +124,6 @@ export const posts: Post[] = [
   {
     slug: "four-windows-on-a-slow-train",
     number: "05",
-    category: "Field Note",
     title: "Four Windows on a Slow Train",
     dek: "Brief observations collected between cities.",
     date: "May 12, 2026",
@@ -153,13 +147,4 @@ export const posts: Post[] = [
     ],
   },
 ];
-export const featuredPost = posts.find((p) => p.featured)!;
-export const categories = [
-  "All",
-  "Visual Essay",
-  "Process",
-  "Color",
-  "Conversation",
-  "Field Note",
-] as const;
 export const getPost = (slug: string) => posts.find((p) => p.slug === slug);

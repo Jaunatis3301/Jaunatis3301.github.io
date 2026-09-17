@@ -7,10 +7,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const base = "https://jaunatis3301.github.io";
   return [
     { url: base, changeFrequency: "monthly", priority: 1 },
-    { url: `${base}/journal`, changeFrequency: "weekly", priority: 0.9 },
+    { url: `${base}/note`, changeFrequency: "weekly", priority: 0.9 },
     { url: `${base}/about`, changeFrequency: "yearly", priority: 0.5 },
     ...posts.map((post) => ({
-      url: `${base}/journal/${post.slug}`,
+      url: `${base}/note/${post.slug}`,
       lastModified: new Date("2026-07-18"),
       changeFrequency: "yearly" as const,
       priority: 0.7,

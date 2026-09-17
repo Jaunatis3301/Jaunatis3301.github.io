@@ -7,7 +7,6 @@ export default function IssueRail({ post }: { post: Post }) {
     >
       <span>Issue 01</span>
       <span className="text-[var(--accent)]">No. {post.number}</span>
-      <span>{post.category}</span>
       <span className="ml-auto md:ml-0 md:mt-auto">{post.date}</span>
     </aside>
   );

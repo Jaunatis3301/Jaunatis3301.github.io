@@ -13,11 +13,11 @@ const departure = localFont({
 const sans = Manrope({ subsets: ["latin"], variable: "--font-manrope", display: "swap" });
 export const metadata: Metadata = {
   metadataBase: new URL("https://jaunatis3301.github.io"),
-  title: { default: "jaunrcy - A Personal Journal", template: "%s - jaunrcy" },
+  title: { default: "jaunrcy - A Personal Note", template: "%s - jaunrcy" },
   description:
-    "A personal journal about cinema, visual culture, color, memory, and the creative process.",
+    "A personal note about cinema, visual culture, color, memory, and the creative process.",
   openGraph: {
-    title: "jaunrcy - A Personal Journal",
+    title: "jaunrcy - A Personal Note",
     description: "Notes on images, work, and the things still unresolved.",
     type: "website",
   },

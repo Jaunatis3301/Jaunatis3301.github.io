@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import MobileNavigation from "./MobileNavigation";
 
 const items = [
-  ["Journal", "/journal"],
+  ["Note", "/note"],
   ["About", "/about"],
 ] as const;
 

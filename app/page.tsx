@@ -12,14 +12,14 @@ export default function Home() {
         <main id="main">
           <Masthead />
           <StoryList />
-          <section className="section-reveal journal-manifesto page-shell mb-24 md:mb-36">
-            <div className="journal-manifesto__inner">
-              <h2 className="display relative z-10 max-w-5xl text-4xl sm:text-5xl lg:text-6xl">
+          <section className="section-reveal note-manifesto page-shell mb-24 max-w-5xl md:mb-36">
+            <div className="note-manifesto__inner">
+              <h2 className="display relative z-10 max-w-3xl text-3xl sm:text-4xl lg:text-5xl">
                 A place to think in public, without pretending the thought is finished.
               </h2>
               <div className="relative z-10 mt-10 border-t rule pt-6 md:pr-56 lg:pr-64">
                 <p className="max-w-2xl leading-7 text-[var(--muted)]">
-                  jaunrcy is my personal journal on cinema, visual culture, and the slow work of
+                  jaunrcy is my personal note on cinema, visual culture, and the slow work of
                   learning how to pay attention. It gathers essays, conversations, and fragments
                   from the spaces around a finished image.
                 </p>
@@ -33,7 +33,7 @@ export default function Home() {
               <DecorativeMotif
                 motif="bunny"
                 sizes="(max-width: 768px) 8rem, 15rem"
-                className="journal-manifesto__motif w-28 sm:w-36 md:w-52 lg:w-60"
+                className="note-manifesto__motif w-28 sm:w-36 md:w-48 lg:w-52"
               />
             </div>
           </section>

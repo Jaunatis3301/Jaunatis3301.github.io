@@ -4,7 +4,7 @@ export default function SiteFooter() {
       <div>
         <p className="meta text-sm tracking-[.25em]">note</p>
         <p className="mt-3 max-w-sm text-sm text-[var(--muted)]">
-          A personal journal about images, work, and the things still unresolved.
+          A personal note about images, work, and the things still unresolved.
         </p>
       </div>
       <div className="meta mt-12 flex flex-col gap-2 border-t rule pt-4 text-[11px] text-[var(--muted)] sm:flex-row sm:justify-between">

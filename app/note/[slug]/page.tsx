@@ -34,9 +34,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
   const { slug } = await params;
   const post = getPost(slug);
   if (!post) notFound();
-  const related =
-    posts.find((item) => item.slug !== post.slug && item.category === post.category) ||
-    posts.find((item) => item.slug !== post.slug)!;
+  const related = posts.find((item) => item.slug !== post.slug)!;
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -46,7 +44,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
     author: { "@type": "Person", name: "jaunrcy" },
     publisher: { "@type": "Person", name: "jaunrcy" },
     image: post.image,
-    mainEntityOfPage: `https://jaunatis3301.github.io/journal/${post.slug}/`,
+    mainEntityOfPage: `https://jaunatis3301.github.io/note/${post.slug}/`,
   };
   return (
     <>
@@ -61,9 +59,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
           <header className="page-shell grid gap-7 pb-10 pt-10 md:grid-cols-[5.5rem_1fr] md:gap-10 md:pb-16">
             <IssueRail post={post} />
             <div>
-              <p className="meta text-[11px] uppercase text-[var(--accent)]">
-                {post.category} · {post.readingTime}
-              </p>
+              <p className="meta text-[11px] uppercase text-[var(--accent)]">{post.readingTime}</p>
               <h1 className="reading-title mt-5 max-w-6xl text-4xl sm:text-5xl lg:text-7xl">
                 {post.title}
               </h1>
@@ -101,7 +97,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
         <aside className="page-shell mb-20 border-y rule py-10">
           <p className="meta text-[11px] uppercase text-[var(--muted)]">Continue reading</p>
           <Link
-            href={`/journal/${related.slug}`}
+            href={`/note/${related.slug}`}
             className="story-link focus-ring mt-5 flex items-end justify-between gap-6"
           >
             <span className="story-title reading-title text-3xl sm:text-4xl">{related.title}</span>

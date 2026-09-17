@@ -6,7 +6,7 @@ export default function Masthead() {
     >
       <div className="grid items-end gap-8 md:grid-cols-[minmax(14rem,.48fr)_minmax(0,1.52fr)] md:gap-14">
         <div className="order-2 md:order-1 md:pb-3">
-          <p className="meta text-[11px] uppercase text-[var(--accent)]">Independent journal</p>
+          <p className="meta text-[11px] uppercase text-[var(--accent)]">Independent note</p>
           <p className="mt-5 max-w-sm text-sm leading-7 text-[var(--muted)]">
             Notes on images, work, and the things still unresolved.
           </p>

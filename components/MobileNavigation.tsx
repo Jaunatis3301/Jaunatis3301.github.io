@@ -4,7 +4,7 @@ import { Menu, X } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 const items = [
-  ["Journal", "/journal"],
+  ["Note", "/note"],
   ["About", "/about"],
 ];
 export default function MobileNavigation() {
