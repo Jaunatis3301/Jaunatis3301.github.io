@@ -56,6 +56,12 @@ a {
   letter-spacing: -0.08em;
   line-height: 0.92;
 }
+.reading-title {
+  font-family: var(--font-manrope), sans-serif;
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  line-height: 1.18;
+}
 .meta {
   font-family: var(--font-departure-mono), monospace;
   font-weight: 400;
@@ -678,6 +684,19 @@ html[data-theme="light"] .story-link:hover img {
   margin: 1.3em 0;
   padding-left: 1.25rem;
   border-left: 1px solid var(--accent);
+}
+.article-prose,
+.article-prose h2,
+.article-prose blockquote {
+  font-family: var(--font-manrope), sans-serif;
+}
+.article-prose h2 {
+  font-weight: 500;
+  line-height: 1.3;
+}
+.article-prose blockquote {
+  line-height: 1.45;
+  letter-spacing: normal;
 }
 @media (prefers-reduced-motion: reduce) {
   html {

@@ -62,7 +62,7 @@ export default function JournalArchive() {
                   <span className="text-[var(--accent)]">No. {post.number}</span>
                   <span>{post.category}</span>
                 </div>
-                <h2 className="story-title display text-3xl sm:text-4xl lg:text-5xl">
+                <h2 className="story-title reading-title text-3xl sm:text-4xl lg:text-5xl">
                   {post.title}
                 </h2>
                 <p className="mt-3 max-w-2xl text-sm leading-6 text-[var(--muted)]">{post.dek}</p>

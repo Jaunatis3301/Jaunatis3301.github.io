@@ -1,7 +1,6 @@
 import Link from "next/link";
 import DecorativeMotif from "@/components/DecorativeMotif";
 import FeaturedEssay from "@/components/FeaturedEssay";
-import JournalEntrance from "@/components/JournalEntrance";
 import Masthead from "@/components/Masthead";
 import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
@@ -9,7 +8,6 @@ import StoryList from "@/components/StoryList";
 export default function Home() {
   return (
     <>
-      <JournalEntrance />
       <div id="home-content">
         <SiteHeader />
         <main id="main">

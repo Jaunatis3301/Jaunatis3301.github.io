@@ -40,7 +40,7 @@ export default function StoryList() {
               </div>
               <div className="pt-5">
                 <StoryMeta {...post} />
-                <h3 className="story-title display mt-4 text-3xl sm:text-4xl">{post.title}</h3>
+                <h3 className="story-title reading-title mt-4 text-3xl sm:text-4xl">{post.title}</h3>
                 <p className="mt-4 max-w-lg text-sm leading-7 text-[var(--muted)]">{post.dek}</p>
               </div>
             </Link>

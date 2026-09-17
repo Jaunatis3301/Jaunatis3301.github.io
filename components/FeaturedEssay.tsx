@@ -28,7 +28,7 @@ export default function FeaturedEssay() {
         <div className="flex flex-col justify-end md:pb-4">
           <h2
             id="featured-title"
-            className="story-title display fade-up delay-2 text-3xl sm:text-4xl md:text-3xl lg:text-5xl"
+            className="story-title reading-title fade-up delay-2 text-3xl sm:text-4xl md:text-3xl lg:text-5xl"
           >
             {post.title}
           </h2>
