@@ -12,12 +12,12 @@ export default function Home() {
         <main id="main">
           <Masthead />
           <StoryList />
-          <section className="section-reveal note-manifesto page-shell mb-24 max-w-5xl md:mb-36">
+          <section className="section-reveal note-manifesto page-shell mb-24 md:mb-36">
             <div className="note-manifesto__inner">
               <h2 className="display relative z-10 max-w-3xl text-3xl sm:text-4xl lg:text-5xl">
                 A place to think in public, without pretending the thought is finished.
               </h2>
-              <div className="relative z-10 mt-10 border-t rule pt-6 md:pr-56 lg:pr-64">
+              <div className="relative z-10 mt-7 border-t rule pt-5 md:pr-56 lg:pr-64">
                 <p className="max-w-2xl leading-7 text-[var(--muted)]">
                   jaunrcy is my personal note on cinema, visual culture, and the slow work of
                   learning how to pay attention. It gathers essays, conversations, and fragments

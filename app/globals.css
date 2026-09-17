@@ -217,7 +217,8 @@ a {
 .note-manifesto__inner {
   position: relative;
   overflow: hidden;
-  padding: clamp(1.75rem, 4vw, 4rem);
+  padding-block: clamp(1.75rem, 3vw, 3rem);
+  padding-inline: clamp(2rem, 5vw, 5.5rem);
 }
 .note-manifesto__motif {
   position: absolute;
@@ -418,7 +419,7 @@ a {
     text-align: left;
   }
   .note-manifesto__inner {
-    padding-bottom: 8.5rem;
+    padding-bottom: 6.5rem;
   }
   .note-manifesto__motif {
     right: -1.25rem;
