@@ -1,12 +1,11 @@
-import Image from "next/image";
 import Link from "next/link";
 import { posts } from "@/lib/posts";
 
-const latestPosts = posts.filter((post) => !post.featured).slice(0, 3);
+const latestPosts = posts;
 
 function StoryMeta({ number, category, date }: { number: string; category: string; date: string }) {
   return (
-    <p className="meta flex gap-3 text-[11px] uppercase text-[var(--muted)]">
+    <p className="flex flex-wrap gap-x-3 gap-y-1 text-xs text-[var(--muted)]">
       <span className="text-[var(--accent)]">{number}</span>
       <span>{category}</span>
       <span>·</span>
@@ -16,32 +15,23 @@ function StoryMeta({ number, category, date }: { number: string; category: strin
 }
 export default function StoryList() {
   return (
-    <section aria-labelledby="latest-title" className="section-reveal page-shell pb-24 md:pb-36">
+    <section aria-labelledby="latest-title" className="page-shell pb-24 md:pb-36">
       <div className="grid items-end gap-5 border-t rule pb-10 pt-5 sm:grid-cols-[1fr_auto]">
-        <h2 id="latest-title" className="display text-4xl sm:text-5xl lg:text-6xl">
+        <h2 id="latest-title" className="reading-title text-2xl sm:text-3xl">
           Recent entries
         </h2>
         <Link className="focus-ring hidden text-sm sm:block" href="/journal">
           View archive →
         </Link>
       </div>
-      <div className="recent-grid">
-        {latestPosts.map((post, index) => (
-          <article className={`recent-card recent-card--${index + 1}`} key={post.slug}>
-            <Link className="story-link focus-ring block" href={`/journal/${post.slug}`}>
-              <div className="media-frame recent-card__image relative overflow-hidden bg-[var(--surface)]">
-                <Image
-                  src={post.image}
-                  alt={post.imageAlt}
-                  fill
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  className="object-cover"
-                />
-              </div>
-              <div className="pt-5">
+      <div className="divide-y divide-[var(--rule)]">
+        {latestPosts.map((post) => (
+          <article key={post.slug}>
+            <Link className="story-link focus-ring block py-8 md:py-10" href={`/journal/${post.slug}`}>
+              <div>
                 <StoryMeta {...post} />
-                <h3 className="story-title reading-title mt-4 text-3xl sm:text-4xl">{post.title}</h3>
-                <p className="mt-4 max-w-lg text-sm leading-7 text-[var(--muted)]">{post.dek}</p>
+                <h3 className="story-title reading-title mt-3 text-2xl sm:text-3xl">{post.title}</h3>
+                <p className="mt-3 max-w-3xl text-sm leading-7 text-[var(--muted)]">{post.dek}</p>
               </div>
             </Link>
           </article>

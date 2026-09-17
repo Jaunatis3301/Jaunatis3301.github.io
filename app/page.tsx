@@ -1,6 +1,5 @@
 import Link from "next/link";
 import DecorativeMotif from "@/components/DecorativeMotif";
-import FeaturedEssay from "@/components/FeaturedEssay";
 import Masthead from "@/components/Masthead";
 import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
@@ -12,7 +11,6 @@ export default function Home() {
         <SiteHeader />
         <main id="main">
           <Masthead />
-          <FeaturedEssay />
           <StoryList />
           <section className="section-reveal journal-manifesto page-shell mb-24 md:mb-36">
             <div className="journal-manifesto__inner">

@@ -16,9 +16,6 @@ export default function SiteFooter() {
           <Link className="focus-ring" href="/journal">
             Journal
           </Link>
-          <Link className="focus-ring" href="/fragments">
-            Fragments
-          </Link>
           <Link className="focus-ring" href="/about">
             About
           </Link>
