@@ -23,18 +23,8 @@ export default function About() {
             </p>
           </div>
         </header>
-        <section className="section-reveal grid gap-8 py-14 md:grid-cols-[.75fr_1.25fr] md:py-20">
-          <div className="media-frame relative aspect-[4/5] overflow-hidden bg-[var(--surface)]">
-            <Image
-              src="/images/making-room-for-the-accidental.png"
-              alt="jaunrcy’s editing desk, covered with film strips and working notes"
-              fill
-              priority
-              sizes="(max-width: 768px) 100vw, 42vw"
-              className="object-cover"
-            />
-          </div>
-          <div className="md:pl-10">
+        <section className="section-reveal py-14 md:py-20">
+          <div className="mx-auto max-w-4xl">
             <aside
               aria-label="Author profile and contact"
               className="profile-panel relative mb-12 grid grid-cols-[4.5rem_1fr] gap-5 overflow-visible sm:grid-cols-[5.5rem_1fr] sm:gap-7"
@@ -83,9 +73,6 @@ export default function About() {
                 the protagonist of my own life: the things I notice, experience, question, and learn
                 along the way, as I work toward the life I truly want to live.
               </p>
-              <blockquote>
-                jaunrcy is where the unfinished thought is allowed to keep its edges.
-              </blockquote>
             </div>
           </div>
         </section>

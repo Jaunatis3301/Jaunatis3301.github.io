@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import IssueRail from "@/components/IssueRail";
 import ReadingProgress from "@/components/ReadingProgress";
 import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
@@ -55,33 +54,18 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }}
         />
-        <article>
-          <header className="page-shell grid gap-7 pb-10 pt-10 md:grid-cols-[5.5rem_1fr] md:gap-10 md:pb-16">
-            <IssueRail post={post} />
-            <div>
-              <p className="meta text-[11px] uppercase text-[var(--accent)]">{post.readingTime}</p>
-              <h1 className="reading-title mt-5 max-w-6xl text-4xl sm:text-5xl lg:text-7xl">
-                {post.title}
-              </h1>
-              <p className="mt-8 max-w-2xl text-base leading-8 text-[var(--muted)]">{post.dek}</p>
-            </div>
+        <article className="page-shell">
+          <header className="max-w-4xl pb-12 pt-12 md:pb-16 md:pt-20">
+            <p className="meta flex flex-wrap gap-x-4 gap-y-2 text-[11px] uppercase text-[var(--accent)]">
+              <span>Note {post.number}</span>
+              <span>{post.date}</span>
+              <span>{post.readingTime}</span>
+            </p>
+            <h1 className="novel-title mt-6 text-4xl sm:text-5xl lg:text-6xl">{post.title}</h1>
+            <p className="novel-dek mt-7 max-w-2xl text-[var(--muted)]">{post.dek}</p>
           </header>
-          <div className="page-shell relative aspect-[4/3] max-h-[52rem] overflow-hidden bg-[var(--surface)] md:aspect-[16/9]">
-            <Image
-              src={post.image}
-              alt={post.imageAlt}
-              fill
-              priority
-              sizes="100vw"
-              className="object-cover"
-            />
-          </div>
-          <div className="page-shell grid gap-8 py-14 md:grid-cols-[5.5rem_1fr] md:gap-10 md:py-20">
-            <div className="meta text-[11px] uppercase text-[var(--muted)]">
-              <p>Words & images</p>
-              <p className="mt-2 text-[var(--ink)]">jaunrcy</p>
-            </div>
-            <div className="prose article-prose">
+          <div className="grid gap-12 border-t rule py-12 lg:grid-cols-[minmax(0,1fr)_minmax(18rem,28rem)] lg:gap-16 lg:py-16">
+            <div className="novel-prose">
               {post.body.map((section, index) => (
                 <section key={index}>
                   {section.heading && <h2>{section.heading}</h2>}
@@ -92,6 +76,24 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
                 </section>
               ))}
             </div>
+            <aside className="order-first lg:order-none">
+              <figure className="lg:sticky lg:top-28">
+                <div className="media-frame relative aspect-[4/5] overflow-hidden bg-[var(--surface)]">
+                  <Image
+                    src={post.image}
+                    alt={post.imageAlt}
+                    fill
+                    priority
+                    sizes="(max-width: 1024px) 100vw, 30vw"
+                    className="object-cover"
+                  />
+                </div>
+                <figcaption className="meta mt-4 flex justify-between gap-4 text-[10px] uppercase text-[var(--muted)]">
+                  <span>Words & images</span>
+                  <span>jaunrcy</span>
+                </figcaption>
+              </figure>
+            </aside>
           </div>
         </article>
         <aside className="page-shell mb-20 border-y rule py-10">

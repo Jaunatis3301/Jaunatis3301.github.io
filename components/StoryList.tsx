@@ -1,8 +1,6 @@
 import Link from "next/link";
 import { posts } from "@/lib/posts";
 
-const latestPosts = posts;
-
 function StoryMeta({ number, date }: { number: string; date: string }) {
   return (
     <p className="flex flex-wrap gap-x-3 gap-y-1 text-xs text-[var(--muted)]">
@@ -11,7 +9,15 @@ function StoryMeta({ number, date }: { number: string; date: string }) {
     </p>
   );
 }
-export default function StoryList({ showHeader = true }: { showHeader?: boolean }) {
+export default function StoryList({
+  showHeader = true,
+  limit,
+}: {
+  showHeader?: boolean;
+  limit?: number;
+}) {
+  const visiblePosts = typeof limit === "number" ? posts.slice(0, limit) : posts;
+
   return (
     <section
       aria-label={showHeader ? undefined : "All notes"}
@@ -29,7 +35,7 @@ export default function StoryList({ showHeader = true }: { showHeader?: boolean 
         </div>
       )}
       <div className="divide-y divide-[var(--rule)]">
-        {latestPosts.map((post) => (
+        {visiblePosts.map((post) => (
           <article key={post.slug}>
             <Link className="story-link focus-ring block py-8 md:py-10" href={`/note/${post.slug}`}>
               <div>

@@ -11,7 +11,7 @@ export default function Home() {
         <SiteHeader />
         <main id="main">
           <Masthead />
-          <StoryList />
+          <StoryList limit={2} />
           <section className="section-reveal note-manifesto page-shell mb-24 md:mb-36">
             <div className="note-manifesto__inner">
               <h2 className="display relative z-10 max-w-3xl text-3xl sm:text-4xl lg:text-5xl">
