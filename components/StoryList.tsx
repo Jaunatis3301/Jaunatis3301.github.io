@@ -1,4 +1,5 @@
 import Link from "next/link";
+import GraffitiTitle from "@/components/GraffitiTitle";
 import { posts } from "@/lib/posts";
 
 function StoryMeta({ number, date }: { number: string; date: string }) {
@@ -40,9 +41,13 @@ export default function StoryList({
             <Link className="story-link focus-ring block py-8 md:py-10" href={`/note/${post.slug}`}>
               <div>
                 <StoryMeta {...post} />
-                <h3 className="story-title reading-title mt-3 text-2xl sm:text-3xl">
-                  {post.title}
-                </h3>
+                <GraffitiTitle
+                  as="h3"
+                  preset="story"
+                  text={post.title}
+                  className="story-title reading-title mt-3 text-2xl sm:text-3xl"
+                  wrapperClassName="w-fit max-w-full"
+                />
                 <p className="mt-3 max-w-3xl text-sm leading-7 text-[var(--muted)]">{post.dek}</p>
               </div>
             </Link>

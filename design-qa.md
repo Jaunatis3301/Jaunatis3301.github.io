@@ -1,62 +1,49 @@
-# Journal Entrance Design QA
+# Graffiti Title Integration — Design QA
 
-## Comparison Target
+## Comparison target
 
-- Source visual truth: `/Users/jaunatis/.codex/generated_images/019f9e5e-daab-7012-8054-0de1b3ade055/exec-b790d6ed-25d6-47c1-82ac-6236a2b6e11f.png`
-- Source pixels: `1487 × 1058`.
-- Implementation route: `/` in the isolated static preview at `http://127.0.0.1:4173/`.
-- State: dark theme, first visit before Enter; post-entry state captured separately.
+- Source visual truth: `/Users/jaunatis/Github/about the skill/experiment-02/` and the three user-provided graffiti references from 2026-09-18.
+- Implementation: `/`, `/note/`, `/about/`, and `/note/distance-between-looking-and-seeing/` in the isolated preview at `http://127.0.0.1:4173/`.
+- State: dark theme; resting and completed-hover hold states.
+- Browser evidence: current Codex in-app Browser captures for swarm, crossout, ambush, story-tease, and the resting article state. The capture API returned inline evidence rather than filesystem-backed screenshots.
+- Browser viewport: approximately 771 × 837 CSS pixels at device density 1.
 
-## Viewports And Density Normalization
+## Full-view comparison evidence
 
-- Desktop browser viewport: `1280 × 720` CSS px; implementation capture: `1280 × 720` px.
-- Mobile browser viewport: `390 × 844` CSS px; entrance capture: `390 × 844` px.
-- The source mock has a taller aspect ratio than the available desktop browser viewport. For full-view comparison it was proportionally contained inside a `1280 × 720` panel without stretching. A separate lower-region comparison was used for the title, caption, rule, and Enter alignment.
+The implementation preserves the Blog's monochrome ocean background, typography, spacing, navigation, article imagery, and reading structure at rest. Pink and cyan are introduced only while a title effect is active.
 
-## Evidence
+The first pass on the article title stretched the graffiti horizontally because the SVG used non-proportional scaling. The implementation was changed to `preserveAspectRatio="xMidYMid meet"`, and every subsequent capture showed round faces, stars, crosses, arrows, and lettering with stable proportions.
 
-- Desktop entrance: `/private/tmp/jaunrcy-entry-desktop-final.png`
-- Mobile entrance: `/private/tmp/jaunrcy-entry-mobile-final.png`
-- Desktop after Enter: `/private/tmp/jaunrcy-after-enter-desktop.png`
-- Mobile after Enter: `/private/tmp/jaunrcy-after-enter-mobile-final.png`
-- Full-view comparison: `/private/tmp/jaunrcy-entry-design-comparison.jpg`
-- Focused comparison: `/private/tmp/jaunrcy-entry-focused-comparison.jpg`
+## Focused interaction evidence
 
-## Required Fidelity Surfaces
+- Home masthead: the `Jaunrcy` title uses the stronger swarm preset while the title remains readable.
+- Note and About: crossout marks remain confined to the title region; the short and long title layouts were both captured.
+- Article detail: ambush marks sit behind the title, preserve its original line wrapping, remain visible for about two seconds, and then disappear.
+- Story list: the low-intensity preset adds only rough underline strokes and a small arrow/cross treatment.
+- Only one pointer-enter event starts each title animation; leaving early does not cancel the two-second hold, and repeated entry is locked until the current sequence finishes.
 
-- Fonts and typography: the existing Instrument Serif, DM Mono, and Manrope hierarchy is preserved. The title remains fully visible with intact `J` and `y` descenders; caption text no longer collides with the display glyphs.
-- Spacing and layout rhythm: the lower-left title block, vertical issue rail, long horizontal rule, right-aligned Enter control, top-right moon, and broad negative space follow the selected mock. Mobile reflows the title and action into a single lower composition without overflow.
-- Colors and visual tokens: the entrance stays within black, charcoal, pearl white, and pale gray. The ocean remains visible while retaining the dark editorial atmosphere.
-- Image quality and asset fidelity: the existing ocean photograph and selected moon PNG are used directly. There are no CSS-drawn substitute illustrations, stretched assets, or placeholder imagery.
-- Copy and content: `Jaunrcy`, `A personal journal`, `Issue 01 · Summer 2026`, the journal caption, and `Enter` match the selected direction.
+## Required fidelity surfaces
 
-## Interaction And Accessibility Checks
+- Fonts and typography: all original title font classes, sizes, weights, letter spacing, line heights, wrapping, and alignment remain in place.
+- Spacing and layout rhythm: decorative SVGs are absolutely positioned and do not alter document flow or title dimensions. No desktop horizontal overflow was visible.
+- Colors and visual tokens: the resting Blog remains monochrome. Active marks use the selected saturated pink and cyan palette.
+- Image quality and asset fidelity: existing Blog images are unchanged. The user explicitly required a code-only effect, so the title marks are generated as proportional SVG paths rather than raster assets.
+- Copy and content: visible page and article titles are unchanged. Decorative annotations are `aria-hidden`.
 
-- Enter is a real keyboard-focusable button and activates the upward cover transition.
-- After the transition, the smaller homepage masthead and featured article become visible.
-- The entrance is recorded in `sessionStorage`; reloading the same tab produced zero entrance dialogs.
-- Background content is inert and hidden from assistive technology while the entrance is open.
-- `prefers-reduced-motion` uses the immediate-entry path and the existing global reduced-motion rules.
-- Mobile and desktop captures have no horizontal overflow.
-- Browser console after Enter: no warnings or errors.
+## Findings
 
-## Comparison History
-
-- Pass 0: implementation completed, but rendering was blocked because the source checkout intentionally had no dependencies. Validation moved to `/private/tmp/jaunrcy-entry-validation` after user approval.
-- Pass 1 findings: initial auto-focus produced a visible focus box not present in the mock; the `J` descender crowded the caption. Auto-focus was removed and caption spacing was corrected.
-- Pass 2 finding: the ocean was darker and more blurred than the source direction. Blur was reduced and brightness raised while retaining text contrast.
-- Pass 3: desktop, mobile, post-entry state, one-per-session behavior, console output, and combined visual comparisons were rechecked. No actionable P0, P1, or P2 findings remain.
+No actionable P0, P1, or P2 findings remain.
 
 ## Validation
 
-- Prettier check: passed.
-- TypeScript with `--noEmit --incremental false`: passed.
-- Next.js static build: passed; all expected routes exported.
-- All dependencies and build output remain isolated under `/private/tmp/jaunrcy-entry-validation`.
-- Validation created none of `node_modules`, `.next`, `out`, `.DS_Store`, or `tsconfig.tsbuildinfo` in the source repository. One ignored root `.DS_Store` predates this work (`2026-07-24 16:43:39 +0800`) and was left untouched.
+- Modified-file Prettier check: passed.
+- TypeScript check: passed.
+- Next.js production build and static route generation: passed in an isolated copy.
+- Browser runtime: all inspected routes returned 200 with no render error overlay. Existing LCP advisory messages for the bunny and rose images are unrelated to this title effect.
+- Real checkout contains no `node_modules`, `.next`, `out`, or `tsconfig.tsbuildinfo` from validation.
 
-## Follow-up Polish
+## Follow-up polish
 
-- P3 only: a future capture environment that supports the mock's exact taller desktop aspect ratio could provide a stricter pixel-level full-frame comparison. The focused comparison already confirms the primary entrance composition.
+- P3: test additional physical mobile devices if touch-specific animation is added later. Current touch behavior deliberately avoids intercepting navigation.
 
 final result: passed

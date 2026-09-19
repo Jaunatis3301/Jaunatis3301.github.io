@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import GraffitiTitle from "@/components/GraffitiTitle";
 import ReadingProgress from "@/components/ReadingProgress";
 import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
@@ -61,7 +62,15 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
               <span>{post.date}</span>
               <span>{post.readingTime}</span>
             </p>
-            <h1 className="novel-title mt-6 text-4xl sm:text-5xl lg:text-6xl">{post.title}</h1>
+            <div className="mt-6">
+              <GraffitiTitle
+                as="h1"
+                preset="ambush"
+                text={post.title}
+                className="novel-title text-4xl sm:text-5xl lg:text-6xl"
+                wrapperClassName="w-full"
+              />
+            </div>
             <p className="novel-dek mt-7 max-w-2xl text-[var(--muted)]">{post.dek}</p>
           </header>
           <div className="grid gap-12 border-t rule py-12 lg:grid-cols-[minmax(0,1fr)_minmax(18rem,28rem)] lg:gap-16 lg:py-16">
