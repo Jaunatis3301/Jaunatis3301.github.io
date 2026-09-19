@@ -15,13 +15,11 @@ export default function Home() {
           <section className="section-reveal note-manifesto page-shell mb-24 md:mb-36">
             <div className="note-manifesto__inner">
               <h2 className="display relative z-10 max-w-3xl text-3xl sm:text-4xl lg:text-5xl">
-                A place to think in public, without pretending the thought is finished.
+               A place to collect my ideas. 
               </h2>
               <div className="relative z-10 mt-7 border-t rule pt-5 md:pr-56 lg:pr-64">
                 <p className="max-w-2xl leading-7 text-[var(--muted)]">
-                  jaunrcy is my personal note on cinema, visual culture, and the slow work of
-                  learning how to pay attention. It gathers essays, conversations, and fragments
-                  from the spaces around a finished image.
+                My name is Jauncry, and I’m exploring the directions that genuinely interest me. This is where I’ll share my articles, essays, reflections, and visual work.
                 </p>
                 <Link
                   href="/about"

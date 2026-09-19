@@ -19,7 +19,7 @@ export default function About() {
               A note of the self, its thoughts, and its quiet feelings.
             </h1>
             <p className="mt-8 max-w-2xl text-lg leading-8 text-[var(--muted)]">
-              Jaunrcy is my personal moniker, a record of how I think.
+              This place is my personal blog, a record of how I think.
             </p>
           </div>
         </header>

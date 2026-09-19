@@ -9,7 +9,7 @@ export default function SiteFooter() {
       </div>
       <div className="meta mt-12 flex flex-col gap-2 border-t rule pt-4 text-[11px] text-[var(--muted)] sm:flex-row sm:justify-between">
         <span>© 2026 note</span>
-        <span>Issue 01 · Beijing / Paris</span>
+        <span>Issue 01 · Hangzhou / Harbin</span>
       </div>
     </footer>
   );
