@@ -1,5 +1,3 @@
-import GraffitiTitle from "@/components/GraffitiTitle";
-
 export default function Masthead() {
   return (
     <section
@@ -18,14 +16,12 @@ export default function Masthead() {
           </div>
         </div>
         <div className="line-reveal masthead-reveal order-1 md:order-2">
-          <GraffitiTitle
-            as="h1"
-            preset="swarm"
-            text="Jaunrcy"
+          <h1
             id="masthead-title"
             className="display home-masthead__title pb-[0.1em] text-[clamp(3.5rem,7.5vw,5.75rem)]"
-            wrapperClassName="w-full"
-          />
+          >
+            Jaunrcy
+          </h1>
         </div>
       </div>
     </section>

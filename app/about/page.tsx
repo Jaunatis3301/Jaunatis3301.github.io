@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import DecorativeMotif from "@/components/DecorativeMotif";
-import GraffitiTitle from "@/components/GraffitiTitle";
 import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
 export const metadata: Metadata = {
@@ -16,13 +15,9 @@ export default function About() {
         <header className="grid gap-8 border-b rule pb-14 md:grid-cols-[.55fr_1.45fr]">
           <p className="meta text-[11px] uppercase text-[var(--accent)]">About me</p>
           <div>
-            <GraffitiTitle
-              as="h1"
-              preset="crossout"
-              text="A note of the self, its thoughts, and its quiet feelings."
-              className="display page-title"
-              wrapperClassName="w-full"
-            />
+            <h1 className="display page-title">
+              A note of the self, its thoughts, and its quiet feelings.
+            </h1>
             <p className="mt-8 max-w-2xl text-lg leading-8 text-[var(--muted)]">
               This place is my personal blog, a record of how I think.
             </p>
