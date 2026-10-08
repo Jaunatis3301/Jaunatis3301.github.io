@@ -54,8 +54,8 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }}
         />
-        <article className="page-shell">
-          <header className="max-w-4xl pb-12 pt-12 md:pb-16 md:pt-20">
+        <article>
+          <header className="page-shell max-w-4xl pb-12 pt-12 md:pb-16 md:pt-20">
             <p className="meta flex flex-wrap gap-x-4 gap-y-2 text-[11px] uppercase text-[var(--accent)]">
               <span>Note {post.number}</span>
               <span>{post.date}</span>
@@ -66,50 +66,58 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
             </div>
             <p className="novel-dek mt-7 max-w-2xl text-[var(--muted)]">{post.dek}</p>
           </header>
-          <div className="grid gap-12 border-t rule py-12 lg:grid-cols-[minmax(0,1fr)_minmax(18rem,28rem)] lg:gap-16 lg:py-16">
-            <div className="novel-prose">
-              {post.body.map((section, index) => (
-                <section key={index}>
-                  {section.heading && <h2>{section.heading}</h2>}
-                  {section.paragraphs.map((paragraph, i) => (
-                    <p key={i}>{paragraph}</p>
+          <div className="article-below">
+            <div className="article-reading-band">
+              <div className="page-shell grid gap-12 py-12 lg:grid-cols-[minmax(0,1fr)_minmax(18rem,28rem)] lg:gap-16 lg:py-16">
+                <div className="novel-prose">
+                  {post.body.map((section, index) => (
+                    <section key={index}>
+                      {section.heading && <h2>{section.heading}</h2>}
+                      {section.paragraphs.map((paragraph, i) => (
+                        <p key={i}>{paragraph}</p>
+                      ))}
+                      {section.quote && <blockquote>{section.quote}</blockquote>}
+                    </section>
                   ))}
-                  {section.quote && <blockquote>{section.quote}</blockquote>}
-                </section>
-              ))}
-            </div>
-            <aside className="order-first lg:order-none">
-              <figure className="lg:sticky lg:top-28">
-                <div className="media-frame relative aspect-[4/5] overflow-hidden bg-[var(--surface)]">
-                  <Image
-                    src={post.image}
-                    alt={post.imageAlt}
-                    fill
-                    priority
-                    sizes="(max-width: 1024px) 100vw, 30vw"
-                    className="object-cover"
-                  />
                 </div>
-                <figcaption className="meta mt-4 flex justify-between gap-4 text-[10px] uppercase text-[var(--muted)]">
-                  <span>Words & images</span>
-                  <span>jaunrcy</span>
-                </figcaption>
-              </figure>
+                <aside className="order-first lg:order-none">
+                  <figure className="lg:sticky lg:top-28">
+                    <div className="media-frame relative aspect-[4/5] overflow-hidden bg-[var(--surface)]">
+                      <Image
+                        src={post.image}
+                        alt={post.imageAlt}
+                        fill
+                        priority
+                        sizes="(max-width: 1024px) 100vw, 30vw"
+                        className="object-cover"
+                      />
+                    </div>
+                    <figcaption className="meta mt-4 flex justify-between gap-4 text-[11px] uppercase text-[var(--muted)]">
+                      <span>Words & images</span>
+                      <span>jaunrcy</span>
+                    </figcaption>
+                  </figure>
+                </aside>
+              </div>
+            </div>
+            <aside className="page-shell border-t rule py-10">
+              <p className="meta text-[11px] uppercase text-[var(--muted)]">Continue reading</p>
+              <Link
+                href={`/note/${related.slug}`}
+                className="story-link focus-ring mt-5 flex items-end justify-between gap-6"
+              >
+                <span className="story-title reading-title text-3xl sm:text-4xl">
+                  {related.title}
+                </span>
+                <span aria-hidden="true">→</span>
+              </Link>
             </aside>
           </div>
         </article>
-        <aside className="page-shell mb-20 border-y rule py-10">
-          <p className="meta text-[11px] uppercase text-[var(--muted)]">Continue reading</p>
-          <Link
-            href={`/note/${related.slug}`}
-            className="story-link focus-ring mt-5 flex items-end justify-between gap-6"
-          >
-            <span className="story-title reading-title text-3xl sm:text-4xl">{related.title}</span>
-            <span aria-hidden="true">→</span>
-          </Link>
-        </aside>
       </main>
-      <SiteFooter />
+      <div className="article-footer-black">
+        <SiteFooter />
+      </div>
     </>
   );
 }

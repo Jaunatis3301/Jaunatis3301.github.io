@@ -22,11 +22,11 @@ export default function StoryList({
     <section
       aria-label={showHeader ? undefined : "All notes"}
       aria-labelledby={showHeader ? "latest-title" : undefined}
-      className="page-shell pb-24 md:pb-36"
+      className="story-list page-shell pb-24 md:pb-36"
     >
       {showHeader && (
-        <div className="grid items-end gap-5 border-t rule pb-10 pt-5 sm:grid-cols-[1fr_auto]">
-          <h2 id="latest-title" className="reading-title text-2xl sm:text-3xl">
+        <div className="grid items-end gap-5 pb-12 pt-5 sm:grid-cols-[1fr_auto]">
+          <h2 id="latest-title" className="reading-title text-3xl sm:text-4xl">
             Recent entries
           </h2>
           <Link className="focus-ring hidden text-sm sm:block" href="/note">
@@ -37,7 +37,10 @@ export default function StoryList({
       <div className="divide-y divide-[var(--rule)]">
         {visiblePosts.map((post) => (
           <article key={post.slug}>
-            <Link className="story-link focus-ring block py-8 md:py-10" href={`/note/${post.slug}`}>
+            <Link
+              className="story-link focus-ring block py-10 md:py-14"
+              href={`/note/${post.slug}`}
+            >
               <div>
                 <StoryMeta {...post} />
                 <h3 className="story-title reading-title mt-3 text-2xl sm:text-3xl">

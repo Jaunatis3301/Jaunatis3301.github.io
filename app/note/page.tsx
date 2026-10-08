@@ -21,7 +21,9 @@ export default function Note() {
             write to the sky.
           </p>
         </header>
-        <StoryList showHeader={false} />
+        <div className="reading-band reading-band--note">
+          <StoryList showHeader={false} />
+        </div>
       </main>
       <SiteFooter />
     </>

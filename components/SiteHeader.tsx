@@ -13,8 +13,8 @@ export default function SiteHeader() {
   const pathname = usePathname();
 
   return (
-    <header className="site-header sticky top-3 z-50 px-3 sm:px-4">
-      <div className="site-header__frame page-shell relative grid h-16 grid-cols-[1fr_auto] items-center px-5 md:grid-cols-[1fr_auto_1fr] md:px-7">
+    <header className="site-header sticky top-0 z-50">
+      <div className="site-header__frame page-shell relative grid h-12 grid-cols-[1fr_auto] items-center md:grid-cols-[1fr_auto_1fr]">
         <Link className="focus-ring meta text-sm font-medium tracking-[.28em]" href="/">
           jaunrcy
         </Link>
@@ -34,7 +34,7 @@ export default function SiteHeader() {
           })}
         </nav>
         <div className="flex items-center justify-self-end">
-          <span className="meta hidden text-[10px] uppercase tracking-[.14em] text-[var(--muted)] md:inline">
+          <span className="meta hidden text-[11px] uppercase tracking-[.14em] text-[var(--muted)] md:inline">
             Issue 01
           </span>
           <MobileNavigation />
