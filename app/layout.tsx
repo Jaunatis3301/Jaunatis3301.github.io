@@ -14,11 +14,10 @@ const sans = Manrope({ subsets: ["latin"], variable: "--font-manrope", display: 
 export const metadata: Metadata = {
   metadataBase: new URL("https://jaunatis3301.github.io"),
   title: { default: "jaunrcy - A Personal Note", template: "%s - jaunrcy" },
-  description:
-    "A personal note about cinema, visual culture, color, memory, and the creative process.",
+  description: "Learning notes, essays, Blender videos, and independent projects by jaunrcy.",
   openGraph: {
     title: "jaunrcy - A Personal Note",
-    description: "Notes on images, work, and the things still unresolved.",
+    description: "Learning notes, essays, Blender videos, and independent projects by jaunrcy.",
     type: "website",
   },
 };

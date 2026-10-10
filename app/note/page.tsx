@@ -5,7 +5,7 @@ import StoryList from "@/components/StoryList";
 
 export const metadata: Metadata = {
   title: "Note",
-  description: "Essays, field notes, conversations, and visual studies from jaunrcy.",
+  description: "Learning notes, experiments, and things worth remembering from jaunrcy.",
 };
 
 export default function Note() {
@@ -17,8 +17,7 @@ export default function Note() {
           <p className="meta text-[11px] uppercase text-[var(--accent)]">My note · Issue 01</p>
           <h1 className="display page-title mt-5">Note</h1>
           <p className="mt-8 max-w-xl leading-7 text-[var(--muted)]">
-            I think I am alive. Back to life in the night, the muses tell me it is my time, and I
-            write to the sky.
+            Learning notes, experiments, and things I want to remember as I go.
           </p>
         </header>
         <div className="reading-band reading-band--note">

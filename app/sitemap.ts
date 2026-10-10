@@ -8,6 +8,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     { url: base, changeFrequency: "monthly", priority: 1 },
     { url: `${base}/note`, changeFrequency: "weekly", priority: 0.9 },
+    { url: `${base}/articles`, changeFrequency: "monthly", priority: 0.6 },
+    { url: `${base}/work`, changeFrequency: "monthly", priority: 0.6 },
     { url: `${base}/about`, changeFrequency: "yearly", priority: 0.5 },
     ...posts.map((post) => ({
       url: `${base}/note/${post.slug}`,

@@ -27,7 +27,7 @@ export default function StoryList({
       {showHeader && (
         <div className="grid items-end gap-5 pb-12 pt-5 sm:grid-cols-[1fr_auto]">
           <h2 id="latest-title" className="reading-title text-3xl sm:text-4xl">
-            Recent entries
+            Recent notes
           </h2>
           <Link className="focus-ring hidden text-sm sm:block" href="/note">
             View all notes →

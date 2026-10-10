@@ -238,6 +238,13 @@ a {
 .about-footer-black {
   background: #000;
 }
+.collection-below,
+.collection-footer-black {
+  background: #000;
+}
+.collection-below {
+  min-height: 24rem;
+}
 .article-below,
 .article-footer-black {
   background: #000;

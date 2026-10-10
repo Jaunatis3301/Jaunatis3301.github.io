@@ -5,6 +5,8 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 const items = [
   ["Note", "/note"],
+  ["Articles", "/articles"],
+  ["Work", "/work"],
   ["About", "/about"],
 ];
 export default function MobileNavigation() {

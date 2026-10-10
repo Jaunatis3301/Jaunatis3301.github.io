@@ -6,6 +6,8 @@ import MobileNavigation from "./MobileNavigation";
 
 const items = [
   ["Note", "/note"],
+  ["Articles", "/articles"],
+  ["Work", "/work"],
   ["About", "/about"],
 ] as const;
 
