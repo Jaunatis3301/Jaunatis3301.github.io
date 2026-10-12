@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Manrope } from "next/font/google";
 import localFont from "next/font/local";
+import TerminalShortcut from "@/components/TerminalShortcut";
 import "./globals.css";
 
 const departure = localFont({
@@ -36,6 +37,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         >
           Skip to content
         </a>
+        <TerminalShortcut />
         {children}
       </body>
     </html>
