@@ -41,7 +41,7 @@ export default function About() {
                 <p className="meta text-[11px] uppercase text-[var(--accent)]">Author</p>
                 <h2 className="mt-2 text-xl font-medium sm:text-2xl">jaunrcy</h2>
                 <p className="mt-2 max-w-xl text-sm leading-6 text-[var(--muted)]">
-                  Turning My Life into a Magazine
+                  Devoted to my own quietly quirky life.
                 </p>
                 <a
                   className="focus-ring mt-4 inline-flex border-b rule pb-1 text-sm transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)]"
