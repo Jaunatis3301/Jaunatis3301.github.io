@@ -397,12 +397,26 @@ a {
   top: 50%;
   opacity: 0.78;
   transform: translateY(-50%) rotate(7deg);
+  transform-origin: 50% 80%;
+  transition: transform 900ms var(--ease-out);
 }
-@supports (animation-timeline: view()) {
+@media (hover: hover) and (min-width: 768px) and (prefers-reduced-motion: no-preference) {
+  .profile-panel:hover .profile-panel__rose {
+    transform: translateY(-50%) rotate(3deg);
+  }
+}
+@supports (animation-timeline: view()) and (animation-range: entry 0% entry 100%) {
   .section-reveal {
     animation: sectionRise both var(--ease-out);
     animation-timeline: view();
     animation-range: entry 5% cover 32%;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .profile-panel__signature {
+      animation: signatureReveal linear both;
+      animation-timeline: view();
+      animation-range: entry 5% entry 85%;
+    }
   }
 }
 .line-reveal {
@@ -479,17 +493,25 @@ a {
     transform: translateY(0);
   }
 }
-@keyframes oceanDrift {
+@keyframes signatureReveal {
   from {
-    transform: scale(1.012) translate3d(-0.2%, -0.12%, 0);
+    clip-path: inset(0 100% 0 0);
   }
   to {
-    transform: scale(1.026) translate3d(0.2%, 0.12%, 0);
+    clip-path: inset(0);
+  }
+}
+@keyframes oceanDrift {
+  from {
+    transform: scale(1.012) translate3d(-0.08%, -0.06%, 0);
+  }
+  to {
+    transform: scale(1.02) translate3d(0.08%, 0.06%, 0);
   }
 }
 @media (prefers-reduced-motion: no-preference) {
   .paper-grain:after {
-    animation: oceanDrift 24s ease-in-out infinite alternate;
+    animation: oceanDrift 36s ease-in-out infinite alternate;
   }
 }
 .story-link .story-title {
@@ -611,6 +633,10 @@ a {
   }
   .section-reveal {
     animation: none !important;
+  }
+  .profile-panel__signature {
+    animation: none !important;
+    clip-path: none;
   }
   .story-link:hover .story-title,
   .home-masthead__link:hover,
