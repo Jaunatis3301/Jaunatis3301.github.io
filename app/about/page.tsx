@@ -28,6 +28,14 @@ export default function About() {
               aria-label="Author profile and contact"
               className="profile-panel relative mb-16 grid grid-cols-[4.5rem_1fr] gap-5 overflow-visible sm:grid-cols-[5.5rem_1fr] sm:gap-7 md:mb-24"
             >
+              <Image
+                src="/images/jauncry-signature.png"
+                alt=""
+                aria-hidden="true"
+                width={1808}
+                height={870}
+                className="profile-panel__signature"
+              />
               <div className="relative aspect-square overflow-hidden rounded-full border rule bg-[var(--surface)]">
                 <Image
                   src="/images/jaunrcy-avatar.jpg"
