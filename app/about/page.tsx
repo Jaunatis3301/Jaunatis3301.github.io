@@ -28,14 +28,6 @@ export default function About() {
               aria-label="Author profile and contact"
               className="profile-panel relative mb-16 grid grid-cols-[4.5rem_1fr] gap-5 overflow-visible sm:grid-cols-[5.5rem_1fr] sm:gap-7 md:mb-24"
             >
-              <Image
-                src="/images/jauncry-signature.png"
-                alt=""
-                aria-hidden="true"
-                width={1808}
-                height={870}
-                className="profile-panel__signature"
-              />
               <div className="relative aspect-square overflow-hidden rounded-full border rule bg-[var(--surface)]">
                 <Image
                   src="/images/jaunrcy-avatar.jpg"
@@ -47,7 +39,17 @@ export default function About() {
               </div>
               <div className="relative z-10 self-center sm:pr-24 lg:pr-36">
                 <p className="meta text-[11px] uppercase text-[var(--accent)]">Author</p>
-                <h2 className="mt-2 text-xl font-medium sm:text-2xl">jaunrcy</h2>
+                <div className="profile-panel__name mt-2">
+                  <Image
+                    src="/images/jauncry-signature.png"
+                    alt=""
+                    aria-hidden="true"
+                    width={1808}
+                    height={870}
+                    className="profile-panel__signature"
+                  />
+                  <h2 className="relative text-xl font-medium sm:text-2xl">jaunrcy</h2>
+                </div>
                 <p className="mt-2 max-w-xl text-sm leading-6 text-[var(--muted)]">
                   Devoted to my own quietly quirky life.
                 </p>

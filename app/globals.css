@@ -372,16 +372,22 @@ a {
 .profile-panel {
   padding: clamp(1.25rem, 2vw, 2rem);
 }
+.profile-panel__name {
+  position: relative;
+  width: fit-content;
+  isolation: isolate;
+}
 .profile-panel__signature {
   position: absolute;
   z-index: 0;
   top: 50%;
-  right: clamp(5rem, 14%, 9rem);
-  width: min(43%, 19rem);
+  left: 50%;
+  width: 10rem;
+  max-width: none;
   height: auto;
   opacity: 0.24;
   filter: invert(1);
-  transform: translateY(-50%);
+  transform: translate(-50%, -50%);
   pointer-events: none;
   user-select: none;
 }
@@ -635,13 +641,6 @@ a {
   }
 }
 @media (max-width: 767px) {
-  .profile-panel__signature {
-    right: 3.5rem;
-    top: auto;
-    bottom: 0.5rem;
-    width: min(52%, 15rem);
-    transform: none;
-  }
   .note-manifesto__inner {
     padding-bottom: 6.5rem;
   }
