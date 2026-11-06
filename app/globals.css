@@ -24,6 +24,65 @@
 html[data-theme="dark"] {
   color-scheme: dark;
 }
+html[data-theme="light"] {
+  color-scheme: light;
+  --bg: #f0efeb;
+  --surface: #e6e5e0;
+  --surface-2: #d9d9d3;
+  --ink: #252627;
+  --muted: #5d6060;
+  --accent: #464a4b;
+  --accent-2: #656869;
+  --on-accent: #f8f7f3;
+  --rule: rgba(46, 49, 49, 0.24);
+}
+.theme-toggle {
+  display: inline-flex;
+  width: 2.5rem;
+  height: 2.5rem;
+  align-items: center;
+  justify-content: center;
+  color: var(--ink);
+}
+html[data-theme="light"] .paper-grain:after {
+  background-image: linear-gradient(rgba(238, 239, 235, 0.50), rgba(238, 239, 235, 0.50)), url("/images/ocean-background.jpg");
+  filter: grayscale(1) invert(0.88) brightness(1.08) contrast(0.66);
+}
+html[data-theme="light"] .site-header {
+  background: rgba(241, 241, 236, 0.88);
+  border-color: rgba(46, 49, 49, 0.15);
+}
+html[data-theme="light"] .home-masthead:before {
+  background: radial-gradient(ellipse at 50% 42%, rgba(245, 245, 240, 0.50), transparent 65%);
+}
+html[data-theme="light"] .home-below,
+html[data-theme="light"] .home-footer-black,
+html[data-theme="light"] .home-below .reading-band,
+html[data-theme="light"] .about-below,
+html[data-theme="light"] .about-footer-black,
+html[data-theme="light"] .collection-below,
+html[data-theme="light"] .collection-footer-black,
+html[data-theme="light"] .article-below,
+html[data-theme="light"] .article-footer-black,
+html[data-theme="light"] .reading-band {
+  background: #f0efeb;
+}
+html[data-theme="light"] .note-manifesto__inner,
+html[data-theme="light"] .profile-panel {
+  background: #e5e5df;
+  border-color: rgba(46, 49, 49, 0.12);
+}
+html[data-theme="light"] .decorative-motif {
+  filter: grayscale(1) invert(1) opacity(0.75);
+}
+html[data-theme="light"] .home-masthead__link {
+  background: #292b2b;
+  border-color: #292b2b;
+  color: #f8f7f3;
+}
+html[data-theme="light"] .home-masthead__link:hover { background: #444747; }
+html[data-theme="light"] .story-link:hover .story-title,
+html[data-theme="light"] .story-link:focus-visible .story-title { color: #626866; }
 * {
   box-sizing: border-box;
 }

@@ -3,6 +3,8 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import MobileNavigation from "./MobileNavigation";
+import { Moon, Sun } from "lucide-react";
+import { useEffect, useState } from "react";
 
 const items = [
   ["Note", "/note"],
@@ -13,6 +15,17 @@ const items = [
 
 export default function SiteHeader() {
   const pathname = usePathname();
+  const [theme, setTheme] = useState<"light" | "dark">("dark");
+  useEffect(() => {
+    setTheme(document.documentElement.dataset.theme === "light" ? "light" : "dark");
+  }, []);
+
+  function toggleTheme() {
+    const next = document.documentElement.dataset.theme === "light" ? "dark" : "light";
+    document.documentElement.dataset.theme = next;
+    setTheme(next);
+    try { localStorage.setItem("jaunrcy-theme", next); } catch {}
+  }
 
   return (
     <header className="site-header sticky top-0 z-50">
@@ -39,6 +52,9 @@ export default function SiteHeader() {
           <span className="meta hidden text-[11px] uppercase tracking-[.14em] text-[var(--muted)] md:inline">
             Issue 01
           </span>
+          <button className="focus-ring theme-toggle ml-4" onClick={toggleTheme} aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"} title={theme === "dark" ? "Light mode" : "Dark mode"}>
+            {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
+          </button>
           <MobileNavigation />
         </div>
       </div>

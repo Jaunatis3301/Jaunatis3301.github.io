@@ -23,13 +23,14 @@ export const metadata: Metadata = {
 };
 export const viewport: Viewport = {
   themeColor: "#08090a",
-  colorScheme: "dark",
+  colorScheme: "light dark",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" data-theme="dark" data-scroll-behavior="smooth">
+    <html lang="en" data-scroll-behavior="smooth" suppressHydrationWarning>
       <body className={`${departure.variable} ${sans.variable} paper-grain`}>
+        <script dangerouslySetInnerHTML={{ __html: `(function(){try{var t=localStorage.getItem('jaunrcy-theme');document.documentElement.dataset.theme=t==='light'||t==='dark'?t:(matchMedia('(prefers-color-scheme: light)').matches?'light':'dark')}catch(e){document.documentElement.dataset.theme='dark'}})()` }} />
         <a
           href="#main"
           className="focus-ring fixed left-3 top-3 z-[100] -translate-y-20 bg-[var(--ink)] px-4 py-3 text-[var(--bg)] focus:translate-y-0"
