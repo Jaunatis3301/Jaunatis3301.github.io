@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { Github } from "lucide-react";
 import DecorativeMotif from "@/components/DecorativeMotif";
 import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
@@ -63,7 +62,7 @@ export default function About() {
                     rel="noreferrer"
                     target="_blank"
                   >
-                    <Github size={18} aria-hidden="true" />
+                    <span aria-hidden="true" className="h-[18px] w-[18px] bg-current" style={{ mask: 'url("/images/github-icon.svg") center / contain no-repeat' }} />
                   </a>
                   <span className="flex h-10 w-10 items-center justify-center rounded-full border rule text-[var(--muted)]" aria-label="X link not yet available" title="X · link not yet available">
                     <span aria-hidden="true" className="h-[18px] w-[18px] bg-current" style={{ mask: 'url("/images/x-icon.svg") center / contain no-repeat' }} />
