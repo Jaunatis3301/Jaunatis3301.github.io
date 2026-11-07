@@ -64,6 +64,7 @@ html[data-theme="light"] .collection-below,
 html[data-theme="light"] .collection-footer-black,
 html[data-theme="light"] .article-below,
 html[data-theme="light"] .article-footer-black,
+html[data-theme="light"] .note-footer,
 html[data-theme="light"] .reading-band {
   background: #f0efeb;
 }
@@ -302,6 +303,9 @@ a {
 }
 .reading-band {
   padding-top: clamp(3.5rem, 7vw, 6rem);
+  background: #0d0e10;
+}
+.note-footer {
   background: #0d0e10;
 }
 .reading-band--note {

@@ -24,7 +24,9 @@ export default function Note() {
           <StoryList showHeader={false} />
         </div>
       </main>
-      <SiteFooter />
+      <div className="note-footer">
+        <SiteFooter />
+      </div>
     </>
   );
 }
