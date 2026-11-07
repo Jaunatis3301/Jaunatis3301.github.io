@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { Github } from "lucide-react";
 import DecorativeMotif from "@/components/DecorativeMotif";
 import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
 export const metadata: Metadata = {
   title: "About",
-  description: "About jaunrcy and this independent personal note.",
+  description: "The thing about me",
 };
 export default function About() {
   return (
@@ -14,11 +15,11 @@ export default function About() {
       <SiteHeader />
       <main id="main">
         <header className="page-shell grid gap-8 pb-16 pt-12 md:grid-cols-[.55fr_1.45fr] md:pb-24 md:pt-20">
-          <p className="meta text-[11px] uppercase text-[var(--accent)]">Jaunrcy / 2026</p>
+          <p className="meta text-[11px] uppercase text-[var(--accent)]">Jaunrcy / rose</p>
           <div>
             <h1 className="editorial-heading editorial-heading--about">About</h1>
             <p className="mt-6 max-w-xl text-lg leading-8 text-[var(--muted)]">
-              This place is my personal blog, a record of how I think.
+              A little space about me, and a record of who I am.
             </p>
           </div>
         </header>
@@ -53,14 +54,24 @@ export default function About() {
                 <p className="mt-2 max-w-xl text-sm leading-6 text-[var(--muted)]">
                   Devoted to my own quietly quirky life.
                 </p>
-                <a
-                  className="focus-ring mt-4 inline-flex border-b rule pb-1 text-sm transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)]"
-                  href="https://github.com/Jaunatis3301"
-                  rel="noreferrer"
-                  target="_blank"
-                >
-                  GitHub · @Jaunatis3301 ↗
-                </a>
+                <div className="mt-4 flex items-center gap-2" aria-label="Social links">
+                  <a
+                    className="focus-ring flex h-10 w-10 items-center justify-center rounded-full border rule text-[var(--ink)] transition-colors hover:bg-[var(--surface-2)]"
+                    href="https://github.com/Jaunatis3301"
+                    aria-label="GitHub (opens in a new tab)"
+                    title="GitHub"
+                    rel="noreferrer"
+                    target="_blank"
+                  >
+                    <Github size={18} aria-hidden="true" />
+                  </a>
+                  <span className="flex h-10 w-10 items-center justify-center rounded-full border rule text-[var(--muted)]" aria-label="X link not yet available" title="X · link not yet available">
+                    <span aria-hidden="true" className="h-[18px] w-[18px] bg-current" style={{ mask: 'url("/images/x-icon.svg") center / contain no-repeat' }} />
+                  </span>
+                  <span className="flex h-10 w-10 items-center justify-center rounded-full border rule text-[var(--muted)]" aria-label="Bilibili link not yet available" title="Bilibili · link not yet available">
+                    <span aria-hidden="true" className="h-[18px] w-[18px] bg-current" style={{ mask: 'url("/images/bilibili-icon.svg") center / contain no-repeat' }} />
+                  </span>
+                </div>
               </div>
               <DecorativeMotif
                 motif="rose"
